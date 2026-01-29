@@ -1,3 +1,4 @@
+// 🌎 Project imports:
 import 'package:mini_ui/src/models/node.dart';
 
 /// Calculator for computing node layouts based on their type.

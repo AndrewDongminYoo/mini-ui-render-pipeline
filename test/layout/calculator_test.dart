@@ -1,6 +1,9 @@
+// 📦 Package imports:
 import 'package:test/test.dart';
-import 'package:mini_ui/src/models/node.dart';
+
+// 🌎 Project imports:
 import 'package:mini_ui/src/layout/calculator.dart';
+import 'package:mini_ui/src/models/node.dart';
 
 void main() {
   group('LayoutCalculator', () {

@@ -1,8 +1,11 @@
+// 📦 Package imports:
 import 'package:test/test.dart';
-import 'package:mini_ui/src/models/node.dart';
-import 'package:mini_ui/src/models/event.dart';
-import 'package:mini_ui/src/core/node_tree.dart';
+
+// 🌎 Project imports:
 import 'package:mini_ui/src/core/engine.dart';
+import 'package:mini_ui/src/core/node_tree.dart';
+import 'package:mini_ui/src/models/event.dart';
+import 'package:mini_ui/src/models/node.dart';
 
 void main() {
   group('Engine', () {

@@ -1,6 +1,9 @@
+// 📦 Package imports:
 import 'package:test/test.dart';
-import 'package:mini_ui/src/models/node.dart';
+
+// 🌎 Project imports:
 import 'package:mini_ui/src/models/event.dart';
+import 'package:mini_ui/src/models/node.dart';
 
 void main() {
   group('SetSizeEvent', () {
