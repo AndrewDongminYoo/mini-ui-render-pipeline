@@ -8,10 +8,7 @@ class Size {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Size &&
-          runtimeType == other.runtimeType &&
-          width == other.width &&
-          height == other.height;
+      other is Size && runtimeType == other.runtimeType && width == other.width && height == other.height;
 
   @override
   int get hashCode => width.hashCode ^ height.hashCode;
@@ -34,11 +31,7 @@ class Position {
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is Position &&
-          runtimeType == other.runtimeType &&
-          x == other.x &&
-          y == other.y;
+      identical(this, other) || other is Position && runtimeType == other.runtimeType && x == other.x && y == other.y;
 
   @override
   int get hashCode => x.hashCode ^ y.hashCode;

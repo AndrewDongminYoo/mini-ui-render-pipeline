@@ -105,9 +105,7 @@ class NodeTree {
 
   /// Get all dirty nodes (both structure and layout).
   List<Node> getAllDirtyNodes() {
-    return getAllNodes()
-        .where((node) => node.structureDirty || node.layoutDirty)
-        .toList();
+    return getAllNodes().where((node) => node.structureDirty || node.layoutDirty).toList();
   }
 
   /// Clear all dirty flags in the tree.
