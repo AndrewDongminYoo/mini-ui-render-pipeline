@@ -21,9 +21,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `moveChild`: Reorder children
 - **Engine**: Event processing with intelligent dirty flag propagation
 - **Layout Calculator**: Automatic layout computation for all node types
-- **Scheduler**: Bottom-up dirty node processing with cascading updates
-- **Renderer**: JSON output generation with paint order
-- **RenderPipeline**: End-to-end integration pipeline
+- **Scheduler**: Dirty node collection and layout recalculation
+- **Renderer**: JSON output generation with correct recomputeLayout ordering (target → parent → sibling) and pre-order DFS paint order
+- **RenderPipeline**: End-to-end integration pipeline with cascading layout updates (fixed-point iteration)
 - **JSON Parser**: Bidirectional JSON serialization/deserialization
 
 #### CLI Tool
@@ -36,15 +36,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Testing
 
-- 215 comprehensive tests with full coverage
-  - 180 unit tests for all core modules
-  - 24 integration tests for RenderPipeline
-  - 11 CLI integration tests
+- 217 comprehensive tests with full coverage
+  - Unit tests for all core modules (models, engine, scheduler, renderer, calculator)
+  - Integration tests for RenderPipeline with PLAN.md validation
+  - CLI integration tests
 - All tests passing with randomized order
 
 #### Documentation
 
-- Complete README.md with architecture overview
+- Complete README.md with architecture overview and project context
+- Detailed DESIGN.md with 13 Mermaid diagrams documenting final design
+- Comprehensive PLAN.md with requirements and specifications
 - Usage examples (simple and complex)
 - Input/output format specifications
 - Development workflow documentation
@@ -60,18 +62,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Design Decisions
 
-- **Dirty Flag Pattern**: Two-tier dirty tracking (structure vs layout)
-- **Cascading Updates**: Fixed-point iteration for parent propagation
-- **Bottom-Up Processing**: Ensures children are processed before parents
-- **Pre-order DFS**: Paint order for correct rendering hierarchy
-- **No-op Detection**: Skip processing when values don't change
+- **Dirty Flag Pattern**: Two-tier dirty tracking (structure vs layout) to distinguish tree topology changes from property changes
+- **recomputeLayout Ordering**: Target-first ordering (directly affected node → parent chain → siblings) as specified in PLAN.md Section 4.5, implemented in `Renderer._collectLayoutNodesInOrder()`
+- **Layout Calculation Direction**: Bottom-up size calculation (children → parents) ensures children are computed before parents for accurate container sizing
+- **Cascading Updates**: Fixed-point iteration in `RenderPipeline._recalculateLayoutsCascading()` handles nested layout changes where child size affects parent size recursively (max 10 iterations)
+- **Pre-order DFS**: Paint order generation ensures parent nodes are rendered before children for correct visual hierarchy
+- **No-op Detection**: Early detection in event handlers skips processing when values don't change (e.g., setting same size)
 
 ### Performance
 
 - Incremental updates avoid full tree recalculation
 - Dirty flag optimization minimizes unnecessary computation
-- Bottom-up processing ensures single-pass layout calculation
-- Cascading updates handle deep tree hierarchies efficiently
+- Bottom-up size calculation ensures efficient single-pass layout
+- Cascading updates handle deep tree hierarchies with parent propagation
+- No-op detection reduces unnecessary dirty flag propagation
 
 ## [Unreleased]
 

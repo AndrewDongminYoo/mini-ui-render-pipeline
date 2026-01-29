@@ -13,10 +13,10 @@ A Dart library that processes UI tree structures and state change events to dete
 - [핵심 기능](#-핵심-기능)
 - [요구사항](#-요구사항)
 - [빠른 시작](#-빠른-시작)
-- [아키텍처](#-아키텍처)
+- [아키텍처](#️-아키텍처)
 - [입출력 형식](#-입출력-형식)
 - [설계 결정](#-설계-결정)
-- [개발 가이드](#-개발-가이드)
+- [개발 가이드](#️-개발-가이드)
 - [테스트](#-테스트)
 - [문서](#-문서)
 
@@ -49,7 +49,7 @@ A Dart library that processes UI tree structures and state change events to dete
 
 ### Event-Driven Architecture
 
-```
+```diagram
 [이벤트 발생] → [변경 감지] → [Dirty 전파] → [재계산] → [Paint Order 생성]
 ```
 
@@ -194,7 +194,7 @@ void main() {
 
 ### 시스템 구조
 
-```
+```diagram
 ┌─────────────────────────────────────────────┐
 │           RenderPipeline                    │
 ├─────────────────────────────────────────────┤
@@ -226,7 +226,7 @@ void main() {
 
 ### 데이터 플로우
 
-```
+```diagram
 [JSON Input]
     ↓
 [Parser] → 트리 구조 + 이벤트 리스트
@@ -343,7 +343,7 @@ void _processSetSize(SetSizeEvent event) {
 
 **예시**:
 
-```json
+```jsonc
 // Event 0: 동일한 크기 설정
 {
   "type": "setSize",
@@ -370,13 +370,13 @@ void _processSetSize(SetSizeEvent event) {
 
 **결정**: 직접 타겟 → 부모들 → 형제들 순서
 
-```
+```diagram
 이벤트 타겟 (A) → 부모 방향 (R) → 형제 (B)
 ```
 
 **예시**:
 
-```
+```diagram
 트리 구조:
 R (Row)
 ├── A (Box, 50×20)  ← setSize 타겟
@@ -433,7 +433,7 @@ void _recalculateLayoutsCascading(NodeTree tree, Scheduler scheduler) {
 
 **결정**: 부모 → 자식 순서로 paintOrder 생성
 
-```
+```diagram
 트리:
 R
 ├── A
@@ -453,7 +453,7 @@ Paint Order: [R, A, A1, A2, B]
 
 ### 프로젝트 구조
 
-```
+```diagram
 lib/
 ├── src/
 │   ├── core/              # 핵심 로직
@@ -627,7 +627,7 @@ dart run example/simple_example.dart
 
 **출력**:
 
-```
+```log
 === Mini UI Render Pipeline Example ===
 
 Event 0: Resize Box A
@@ -644,7 +644,7 @@ dart run example/complex_example.dart
 
 **출력**:
 
-```
+```log
 === Complex UI Layout Example ===
 
 Initial Tree Structure:
