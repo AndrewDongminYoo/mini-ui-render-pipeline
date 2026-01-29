@@ -60,7 +60,7 @@ The system is designed around a **Dirty Flag pattern** for incremental updates, 
 
 ### Core Flow
 
-```
+```diagram
 Event → Mark Target Dirty → Propagate to Related Nodes → Recompute Only Dirty Nodes → Generate Output
 ```
 
@@ -111,7 +111,7 @@ Pre-order DFS traversal: parent rendered before children, siblings in order.
 
 Example tree:
 
-```
+```diagram
 R (root)
 ├── A
 │   ├── A1
