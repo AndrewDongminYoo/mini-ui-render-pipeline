@@ -47,7 +47,7 @@ class RenderPipeline {
       _recalculateLayoutsCascading(tree, scheduler);
 
       // Generate result
-      final result = renderer.generateResult(i);
+      final result = renderer.generateResult(i, event.targetId);
       results.add(result);
 
       // Clear dirty flags for next event
@@ -78,7 +78,7 @@ class RenderPipeline {
       _recalculateLayoutsCascading(tree, scheduler);
 
       // Generate result
-      final result = renderer.generateResult(i);
+      final result = renderer.generateResult(i, event.targetId);
       results.add(result);
 
       // Clear dirty flags

@@ -2,7 +2,27 @@
 
 Last Updated: 2026-01-29
 
-## Current Status: Phase 6 Complete - All Phases Completed ✅
+## Current Status: PLAN.md Requirements Updated - All Tests Passing ✅
+
+### Recent Update: recomputeLayout Ordering Fix (2026-01-29)
+
+**Issue**: PLAN.md 요구사항이 업데이트되어 `recomputeLayout` 순서 규칙이 변경되었습니다.
+
+- **Previous**: Bottom-up depth-based ordering (자식 → 부모)
+- **Required**: Direct target → Parents → Siblings ordering
+
+**Changes Made**:
+
+1. `Renderer.generateResult()` - 이벤트 타겟 ID 파라미터 추가
+2. `Renderer._collectLayoutNodesInOrder()` - 새로운 순서 규칙 구현
+3. `RenderPipeline.process()` - 이벤트 타겟 ID 전달
+4. All tests updated to pass event target ID
+
+**Test Results**: 217 tests passing (215 original + 2 PLAN validation tests)
+
+**Verification**: PLAN.md Case 1 validation confirms correct ordering:
+
+- Event 0 (setSize A): `["A", "R", "B"]` ✅ (target → parent → sibling)
 
 ---
 

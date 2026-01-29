@@ -141,7 +141,7 @@ void main() {
       engine.processEvent(event);
 
       // Generate result
-      final result = renderer.generateResult(0);
+      final result = renderer.generateResult(0, 'A');
 
       expect(result.afterEvent, 0);
       expect(result.recomputeLayout, contains('A'));
@@ -159,7 +159,7 @@ void main() {
       );
       engine.processEvent(event);
 
-      final result = renderer.generateResult(0);
+      final result = renderer.generateResult(0, 'R');
 
       expect(result.recomputeStructure, contains('R'));
       expect(result.recomputeStructure, contains('A'));
@@ -178,7 +178,7 @@ void main() {
       root.addChild(b);
       tree.initialize(root);
 
-      final result = renderer.generateResult(0);
+      final result = renderer.generateResult(0, 'R');
 
       expect(result.paintOrder, ['R', 'A', 'A1', 'A2', 'B']);
     });
@@ -196,7 +196,7 @@ void main() {
           newSize: Size(width: 100, height: 30),
         ),
       );
-      final result1 = renderer.generateResult(0);
+      final result1 = renderer.generateResult(0, 'A');
       tree.clearAllDirtyFlags();
 
       // Event 2: addChild
@@ -206,7 +206,7 @@ void main() {
           child: BoxNode(id: 'B'),
         ),
       );
-      final result2 = renderer.generateResult(1);
+      final result2 = renderer.generateResult(1, 'R');
 
       expect(result1.afterEvent, 0);
       expect(result2.afterEvent, 1);
@@ -225,7 +225,7 @@ void main() {
           child: BoxNode(id: 'A'),
         ),
       );
-      final result1 = renderer.generateResult(0);
+      final result1 = renderer.generateResult(0, 'R');
       tree.clearAllDirtyFlags();
 
       engine.processEvent(
@@ -234,7 +234,7 @@ void main() {
           child: BoxNode(id: 'B'),
         ),
       );
-      final result2 = renderer.generateResult(1);
+      final result2 = renderer.generateResult(1, 'R');
 
       final results = [result1, result2];
 
@@ -293,7 +293,7 @@ void main() {
       final root = BoxNode(id: 'R');
       tree.initialize(root);
 
-      final result = renderer.generateResult(0);
+      final result = renderer.generateResult(0, 'R');
 
       expect(result.recomputeStructure, isEmpty);
       expect(result.recomputeLayout, isEmpty);
@@ -308,7 +308,7 @@ void main() {
       root.addChild(child2);
       tree.initialize(root);
 
-      // Mark child2 and root dirty (child first due to depth)
+      // Mark child2 and root dirty
       engine.processEvent(
         SetSizeEvent(
           targetId: 'B',
@@ -316,17 +316,18 @@ void main() {
         ),
       );
 
-      final result = renderer.generateResult(0);
+      final result = renderer.generateResult(0, 'B');
 
-      // Layout order should be bottom-up
+      // Layout order should be: B (target) → R (parent) → A (sibling)
       final layoutIds = result.recomputeLayout;
       final bIndex = layoutIds.indexOf('B');
       final rIndex = layoutIds.indexOf('R');
       final aIndex = layoutIds.indexOf('A');
 
-      // B and A should come before R
-      expect(bIndex, lessThan(rIndex));
-      expect(aIndex, lessThan(rIndex));
+      // B should be first (target), R second (parent), A third (sibling)
+      expect(bIndex, 0);
+      expect(rIndex, 1);
+      expect(aIndex, 2);
     });
   });
 }
