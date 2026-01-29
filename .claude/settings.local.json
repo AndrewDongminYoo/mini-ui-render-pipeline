@@ -36,7 +36,8 @@
       "mcp__plugin_serena_serena__think_about_collected_information",
       "mcp__plugin_serena_serena__think_about_task_adherence",
       "mcp__plugin_serena_serena__think_about_whether_you_are_done",
-      "mcp__plugin_serena_serena__write_memory"
+      "mcp__plugin_serena_serena__write_memory",
+      "Bash(derry test:*)"
     ]
   }
 }
