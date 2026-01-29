@@ -1,6 +1,9 @@
 {
   "permissions": {
     "allow": [
+      "Bash(dart:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
       "mcp__plugin_serena_serena__activate_project",
       "mcp__plugin_serena_serena__check_onboarding_performed",
       "mcp__plugin_serena_serena__create_text_file",
@@ -23,6 +26,7 @@
       "mcp__plugin_serena_serena__read_file",
       "mcp__plugin_serena_serena__read_memory",
       "mcp__plugin_serena_serena__remove_project",
+      "mcp__plugin_serena_serena__replace_content",
       "mcp__plugin_serena_serena__replace_lines",
       "mcp__plugin_serena_serena__replace_symbol_body",
       "mcp__plugin_serena_serena__restart_language_server",
@@ -32,10 +36,7 @@
       "mcp__plugin_serena_serena__think_about_collected_information",
       "mcp__plugin_serena_serena__think_about_task_adherence",
       "mcp__plugin_serena_serena__think_about_whether_you_are_done",
-      "mcp__plugin_serena_serena__write_memory",
-      "Bash(dart:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "mcp__plugin_serena_serena__write_memory"
     ]
   }
 }
