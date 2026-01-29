@@ -26,5 +26,9 @@ include: package:lints/recommended.yaml
 # For more information about the core and recommended set of lints, see
 # https://dart.dev/go/core-lints
 
-# For additional information about configuring this file, see
-# https://dart.dev/guides/language/analysis-options
+# Formatter settings
+formatter:
+  # Specifies the line width for auto-formatting the code.
+  # https://github.com/dart-lang/dart_style/wiki/Configuration
+  page_width: 120
+  trailing_commas: preserve
