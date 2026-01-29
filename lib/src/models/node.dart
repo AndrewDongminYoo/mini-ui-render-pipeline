@@ -21,10 +21,7 @@ class Size {
 
   /// Creates a copy of this size with optional width/height override.
   Size copyWith({double? width, double? height}) {
-    return Size(
-      width: width ?? this.width,
-      height: height ?? this.height,
-    );
+    return Size(width: width ?? this.width, height: height ?? this.height);
   }
 }
 
@@ -51,10 +48,7 @@ class Position {
 
   /// Creates a copy of this position with optional x/y override.
   Position copyWith({double? x, double? y}) {
-    return Position(
-      x: x ?? this.x,
-      y: y ?? this.y,
-    );
+    return Position(x: x ?? this.x, y: y ?? this.y);
   }
 }
 
@@ -100,8 +94,13 @@ abstract class Node {
     Map<String, dynamic>? state,
     this.structureDirty = false,
     this.layoutDirty = false,
-  })  : children = children ?? [],
-        state = state ?? {};
+  }) : children = children ?? [],
+       state = state ?? {} {
+    // Set parent reference for all children
+    for (final child in this.children) {
+      child.parent = this;
+    }
+  }
 
   /// Mark this node's structure as dirty.
   void markStructureDirty() {
@@ -191,88 +190,52 @@ abstract class Node {
 /// A box node (leaf node with fixed size).
 class BoxNode extends Node {
   BoxNode({
-    required String id,
-    Size? size,
-    Position? position,
-    Map<String, dynamic>? state,
-    bool structureDirty = false,
-    bool layoutDirty = false,
-  }) : super(
-    id: id,
-    type: NodeType.box,
-    children: [],
-    size: size,
-    position: position,
-    state: state,
-    structureDirty: structureDirty,
-    layoutDirty: layoutDirty,
-  );
+    required super.id,
+    super.size,
+    super.position,
+    super.state,
+    super.structureDirty,
+    super.layoutDirty,
+  }) : super(type: NodeType.box, children: []);
 }
 
 /// A row node (horizontal layout container).
 class RowNode extends Node {
   RowNode({
-    required String id,
-    List<Node>? children,
-    Size? size,
-    Position? position,
-    Map<String, dynamic>? state,
-    bool structureDirty = false,
-    bool layoutDirty = false,
-  }) : super(
-    id: id,
-    type: NodeType.row,
-    children: children,
-    size: size,
-    position: position,
-    state: state,
-    structureDirty: structureDirty,
-    layoutDirty: layoutDirty,
-  );
+    required super.id,
+    super.children,
+    super.size,
+    super.position,
+    super.state,
+    super.structureDirty,
+    super.layoutDirty,
+  }) : super(type: NodeType.row);
 }
 
 /// A column node (vertical layout container).
 class ColumnNode extends Node {
   ColumnNode({
-    required String id,
-    List<Node>? children,
-    Size? size,
-    Position? position,
-    Map<String, dynamic>? state,
-    bool structureDirty = false,
-    bool layoutDirty = false,
-  }) : super(
-    id: id,
-    type: NodeType.column,
-    children: children,
-    size: size,
-    position: position,
-    state: state,
-    structureDirty: structureDirty,
-    layoutDirty: layoutDirty,
-  );
+    required super.id,
+    super.children,
+    super.size,
+    super.position,
+    super.state,
+    super.structureDirty,
+    super.layoutDirty,
+  }) : super(type: NodeType.column);
 }
 
 /// A stack node (overlay layout container).
 class StackNode extends Node {
   StackNode({
-    required String id,
-    List<Node>? children,
-    Size? size,
-    Position? position,
-    Map<String, dynamic>? state,
-    bool structureDirty = false,
-    bool layoutDirty = false,
-  }) : super(
-    id: id,
-    type: NodeType.stack,
-    children: children,
-    size: size,
-    position: position,
-    state: state,
-    structureDirty: structureDirty,
-    layoutDirty: layoutDirty,
-  );
+    required super.id,
+    super.children,
+    super.size,
+    super.position,
+    super.state,
+    super.structureDirty,
+    super.layoutDirty,
+  }) : super(type: NodeType.stack);
 }
 
 /// Factory function to create a node based on type string.
@@ -286,12 +249,7 @@ Node createNode({
 }) {
   switch (type.toLowerCase()) {
     case 'box':
-      return BoxNode(
-        id: id,
-        size: size,
-        position: position,
-        state: state,
-      );
+      return BoxNode(id: id, size: size, position: position, state: state);
     case 'row':
       return RowNode(
         id: id,
