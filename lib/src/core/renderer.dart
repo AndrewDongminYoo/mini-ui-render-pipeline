@@ -51,8 +51,6 @@ class Renderer {
 
   /// Convert results from JSON array.
   List<EventResult> resultsFromJson(List<dynamic> json) {
-    return json
-        .map((item) => EventResult.fromJson(item as Map<String, dynamic>))
-        .toList();
+    return json.map((item) => EventResult.fromJson(item as Map<String, dynamic>)).toList();
   }
 }

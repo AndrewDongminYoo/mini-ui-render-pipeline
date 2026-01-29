@@ -1,3 +1,4 @@
+// 🎯 Dart imports:
 import 'dart:convert';
 
 // 🌎 Project imports:
@@ -19,6 +20,7 @@ class JsonParser {
         return 'Stack';
     }
   }
+
   /// Parse a JSON string into a ParsedInput.
   ParsedInput parse(String jsonString) {
     final json = jsonDecode(jsonString) as Map<String, dynamic>;
@@ -124,9 +126,7 @@ class JsonParser {
 
   /// Parse the events list from JSON.
   List<Event> _parseEvents(List<dynamic> eventsJson) {
-    return eventsJson
-        .map((eventJson) => _parseEvent(eventJson as Map<String, dynamic>))
-        .toList();
+    return eventsJson.map((eventJson) => _parseEvent(eventJson as Map<String, dynamic>)).toList();
   }
 
   /// Parse a single event from JSON.

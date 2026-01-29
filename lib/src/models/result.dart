@@ -60,10 +60,7 @@ class EventResult {
 
   @override
   int get hashCode =>
-      afterEvent.hashCode ^
-      recomputeStructure.hashCode ^
-      recomputeLayout.hashCode ^
-      paintOrder.hashCode;
+      afterEvent.hashCode ^ recomputeStructure.hashCode ^ recomputeLayout.hashCode ^ paintOrder.hashCode;
 
   /// Helper to compare lists.
   bool _listEquals(List a, List b) {

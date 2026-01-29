@@ -190,18 +190,22 @@ void main() {
       tree.initialize(root);
 
       // Event 1: setSize
-      engine.processEvent(SetSizeEvent(
-        targetId: 'A',
-        newSize: Size(width: 100, height: 30),
-      ));
+      engine.processEvent(
+        SetSizeEvent(
+          targetId: 'A',
+          newSize: Size(width: 100, height: 30),
+        ),
+      );
       final result1 = renderer.generateResult(0);
       tree.clearAllDirtyFlags();
 
       // Event 2: addChild
-      engine.processEvent(AddChildEvent(
-        targetId: 'R',
-        child: BoxNode(id: 'B'),
-      ));
+      engine.processEvent(
+        AddChildEvent(
+          targetId: 'R',
+          child: BoxNode(id: 'B'),
+        ),
+      );
       final result2 = renderer.generateResult(1);
 
       expect(result1.afterEvent, 0);
@@ -215,17 +219,21 @@ void main() {
       tree.initialize(root);
 
       // Process multiple events
-      engine.processEvent(AddChildEvent(
-        targetId: 'R',
-        child: BoxNode(id: 'A'),
-      ));
+      engine.processEvent(
+        AddChildEvent(
+          targetId: 'R',
+          child: BoxNode(id: 'A'),
+        ),
+      );
       final result1 = renderer.generateResult(0);
       tree.clearAllDirtyFlags();
 
-      engine.processEvent(AddChildEvent(
-        targetId: 'R',
-        child: BoxNode(id: 'B'),
-      ));
+      engine.processEvent(
+        AddChildEvent(
+          targetId: 'R',
+          child: BoxNode(id: 'B'),
+        ),
+      );
       final result2 = renderer.generateResult(1);
 
       final results = [result1, result2];
@@ -301,10 +309,12 @@ void main() {
       tree.initialize(root);
 
       // Mark child2 and root dirty (child first due to depth)
-      engine.processEvent(SetSizeEvent(
-        targetId: 'B',
-        newSize: Size(width: 60, height: 20),
-      ));
+      engine.processEvent(
+        SetSizeEvent(
+          targetId: 'B',
+          newSize: Size(width: 60, height: 20),
+        ),
+      );
 
       final result = renderer.generateResult(0);
 
