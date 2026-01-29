@@ -1,6 +1,6 @@
-import '../models/node.dart';
-import '../models/event.dart';
-import 'node_tree.dart';
+import 'package:mini_ui/src/models/node.dart';
+import 'package:mini_ui/src/models/event.dart';
+import 'package:mini_ui/src/core/node_tree.dart';
 
 /// Engine for processing events and managing dirty flags.
 class Engine {

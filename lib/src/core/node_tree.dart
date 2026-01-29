@@ -1,4 +1,4 @@
-import '../models/node.dart';
+import 'package:mini_ui/src/models/node.dart';
 
 /// Manages the tree structure of UI nodes.
 class NodeTree {
