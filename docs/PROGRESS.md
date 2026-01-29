@@ -2,7 +2,7 @@
 
 Last Updated: 2026-01-29
 
-## Current Status: Phase 2 Complete - Ready for Phase 3
+## Current Status: Phase 3.1 Complete - Layout Calculator Implemented
 
 ---
 
@@ -121,20 +121,23 @@ Last Updated: 2026-01-29
 
 ### ⏳ Phase 3: Layout Calculation (PENDING)
 
-#### 3.1 Layout Calculator ⏳
+#### 3.1 Layout Calculator ✅
 
-**Status:** BLOCKED (waiting for Phase 1 & 2)
+**Status:** COMPLETED
 
 **Tasks:**
 
-- [ ] Calculator class
-- [ ] Box layout (fixed size)
-- [ ] Row layout (horizontal sum)
-- [ ] Column layout (vertical sum)
-- [ ] Stack layout (max overlay)
-- [ ] Unit tests
+- [x] LayoutCalculator class
+- [x] Box layout (fixed size - returns existing size)
+- [x] Row layout (width = sum, height = max)
+- [x] Column layout (height = sum, width = max)
+- [x] Stack layout (width = max, height = max)
+- [x] Nested layout calculation support
+- [x] recalculateLayout and recalculateLayouts methods
+- [x] Null handling for missing child sizes
+- [x] Unit tests (22 tests) - ALL PASSING
 
-**Target Files:**
+**Files Created:**
 
 - `lib/src/layout/calculator.dart`
 - `test/layout/calculator_test.dart`
@@ -282,12 +285,12 @@ Last Updated: 2026-01-29
 | NodeTree          | 19      | ✅ PASSING                 |
 | Event Model       | 34      | ✅ PASSING                 |
 | Engine            | 28      | ✅ PASSING                 |
-| Layout Calculator | 0       | ⏳ PENDING                 |
+| Layout Calculator | 22      | ✅ PASSING                 |
 | Scheduler         | 0       | ⏳ PENDING                 |
 | Renderer          | 0       | ⏳ PENDING                 |
 | JSON Parser       | 0       | ⏳ PENDING                 |
 | Integration       | 0       | ⏳ PENDING                 |
-| **TOTAL**         | **106** | **106 passing, 0 failing** |
+| **TOTAL**         | **128** | **128 passing, 0 failing** |
 
 ---
 
@@ -339,7 +342,7 @@ Last Updated: 2026-01-29
 
 ### Layout
 
-- ⏳ `lib/src/layout/calculator.dart`
+- ✅ `lib/src/layout/calculator.dart` (LayoutCalculator with all node type layout rules)
 
 ### Parser
 
@@ -359,6 +362,7 @@ Last Updated: 2026-01-29
 - ✅ `test/core/node_tree_test.dart` (19 tests)
 - ✅ `test/models/event_test.dart` (34 tests)
 - ✅ `test/core/engine_test.dart` (28 tests)
+- ✅ `test/layout/calculator_test.dart` (22 tests)
 - ⏳ `test/core/scheduler_test.dart`
 - ⏳ `test/core/renderer_test.dart`
 - ⏳ `test/layout/calculator_test.dart`
