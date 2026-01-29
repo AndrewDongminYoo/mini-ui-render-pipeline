@@ -132,7 +132,7 @@ void _printTree(Map<String, dynamic> tree) {
   final rootId = tree['root'] as String;
   final nodes = tree['nodes'] as Map<String, dynamic>;
 
-  void printNode(String nodeId, String prefix) {
+  void printNode(String nodeId, String prefix, String childrenPrefix) {
     final node = nodes[nodeId] as Map<String, dynamic>;
     final type = node['type'] as String;
     final size = node['size'] as Map<String, dynamic>?;
@@ -142,14 +142,20 @@ void _printTree(Map<String, dynamic> tree) {
     print('$prefix$nodeId [$type]$sizeStr');
 
     if (children != null && children.isNotEmpty) {
-      for (int i = 0; i < children.length; i++) {
-        final isLast = i == children.length - 1;
-        final childPrefix = prefix + (isLast ? '└── ' : '├── ');
-        final nextPrefix = prefix + (isLast ? '    ' : '│   ');
-        printNode(children[i] as String, childPrefix);
+      for (int i = 0; i < children.length - 1; i++) {
+        printNode(
+          children[i] as String,
+          '$childrenPrefix├── ',
+          '$childrenPrefix│   ',
+        );
       }
+      printNode(
+        children.last as String,
+        '$childrenPrefix└── ',
+        '$childrenPrefix    ',
+      );
     }
   }
 
-  printNode(rootId, '');
+  printNode(rootId, '', '');
 }
