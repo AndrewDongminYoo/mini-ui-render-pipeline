@@ -2,7 +2,7 @@
 
 Last Updated: 2026-01-29
 
-## Current Status: Phase 2.1 - Event Model Implementation
+## Current Status: Phase 2.2 - Engine Implementation
 
 ---
 
@@ -53,30 +53,32 @@ Last Updated: 2026-01-29
 
 ### 🔄 Phase 2: Event System (IN PROGRESS)
 
-#### 2.1 Event Model 🔄
+#### 2.1 Event Model ✅
 
-**Status:** IN PROGRESS
+**Status:** COMPLETED
 
 **Tasks:**
 
-- [ ] Event base class
-- [ ] SetSizeEvent
-- [ ] SetPositionEvent
-- [ ] SetStateEvent
-- [ ] AddChildEvent
-- [ ] RemoveChildEvent
-- [ ] MoveChildEvent
-- [ ] Event factory function
-- [ ] Unit tests
+- [x] Event base class
+- [x] SetSizeEvent
+- [x] SetPositionEvent
+- [x] SetStateEvent
+- [x] AddChildEvent
+- [x] RemoveChildEvent
+- [x] MoveChildEvent
+- [x] Event factory function (createEvent)
+- [x] JSON serialization (eventToJson)
+- [x] Super parameters for cleaner code
+- [x] Unit tests (34 tests) - ALL PASSING
 
-**Target Files:**
+**Files Created:**
 
 - `lib/src/models/event.dart`
 - `test/models/event_test.dart`
 
-#### 2.2 Engine Implementation ⏳
+#### 2.2 Engine Implementation 🔄
 
-**Status:** BLOCKED (waiting for 2.1)
+**Status:** IN PROGRESS
 
 **Tasks:**
 
@@ -271,14 +273,14 @@ Last Updated: 2026-01-29
 | ----------------- | ------ | ------------------------- |
 | Node Model        | 25     | ✅ PASSING                |
 | NodeTree          | 19     | ✅ PASSING                |
-| Event Model       | 0      | ⏳ PENDING                |
+| Event Model       | 34     | ✅ PASSING                |
 | Engine            | 0      | ⏳ PENDING                |
 | Layout Calculator | 0      | ⏳ PENDING                |
 | Scheduler         | 0      | ⏳ PENDING                |
 | Renderer          | 0      | ⏳ PENDING                |
 | JSON Parser       | 0      | ⏳ PENDING                |
 | Integration       | 0      | ⏳ PENDING                |
-| **TOTAL**         | **44** | **44 passing, 0 failing** |
+| **TOTAL**         | **78** | **78 passing, 0 failing** |
 
 ---
 
@@ -315,7 +317,7 @@ Last Updated: 2026-01-29
 ### Models
 
 - ✅ `lib/src/models/node.dart` (Size, Position, Node, BoxNode, RowNode, ColumnNode, StackNode)
-- ⏳ `lib/src/models/event.dart`
+- ✅ `lib/src/models/event.dart` (Event, SetSizeEvent, SetPositionEvent, SetStateEvent, AddChildEvent, RemoveChildEvent, MoveChildEvent)
 - ⏳ `lib/src/models/result.dart`
 
 ### Core
@@ -345,7 +347,7 @@ Last Updated: 2026-01-29
 
 - ✅ `test/models/node_test.dart` (25 tests)
 - ✅ `test/core/node_tree_test.dart` (19 tests)
-- ⏳ `test/models/event_test.dart`
+- ✅ `test/models/event_test.dart` (34 tests)
 - ⏳ `test/core/engine_test.dart`
 - ⏳ `test/core/scheduler_test.dart`
 - ⏳ `test/core/renderer_test.dart`
