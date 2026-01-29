@@ -36,3 +36,8 @@ scripts:
       - dart fix --apply
       - dart format --line-length 120 .
       - dart run import_sorter:main -e
+
+  test:
+    (description): Runs all tests in the Flutter project with coverage enabled.
+    (scripts):
+      - dart test --coverage=coverage --concurrency=4 --test-randomize-ordering-seed=random
