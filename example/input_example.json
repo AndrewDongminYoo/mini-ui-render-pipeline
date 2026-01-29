@@ -1,0 +1,119 @@
+{
+  "tree": {
+    "root": "App",
+    "nodes": {
+      "App": {
+        "type": "Column",
+        "children": ["Header", "Body", "Footer"]
+      },
+      "Header": {
+        "type": "Row",
+        "children": ["Logo", "Title"],
+        "state": {
+          "backgroundColor": "#2196F3"
+        }
+      },
+      "Logo": {
+        "type": "Box",
+        "size": {
+          "w": 80,
+          "h": 40
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "Title": {
+        "type": "Box",
+        "size": {
+          "w": 200,
+          "h": 40
+        }
+      },
+      "Body": {
+        "type": "Stack",
+        "children": ["Background", "Content"]
+      },
+      "Background": {
+        "type": "Box",
+        "size": {
+          "w": 400,
+          "h": 600
+        },
+        "state": {
+          "backgroundColor": "#FFFFFF"
+        }
+      },
+      "Content": {
+        "type": "Column",
+        "children": ["Section1", "Section2"]
+      },
+      "Section1": {
+        "type": "Box",
+        "size": {
+          "w": 380,
+          "h": 200
+        }
+      },
+      "Section2": {
+        "type": "Box",
+        "size": {
+          "w": 380,
+          "h": 200
+        }
+      },
+      "Footer": {
+        "type": "Row",
+        "children": ["CopyrightText"],
+        "state": {
+          "backgroundColor": "#424242"
+        }
+      },
+      "CopyrightText": {
+        "type": "Box",
+        "size": {
+          "w": 400,
+          "h": 30
+        }
+      }
+    }
+  },
+  "events": [
+    {
+      "type": "setSize",
+      "target": "Logo",
+      "newSize": {
+        "w": 120,
+        "h": 60
+      }
+    },
+    {
+      "type": "setState",
+      "target": "Header",
+      "newState": {
+        "backgroundColor": "#1976D2"
+      }
+    },
+    {
+      "type": "addChild",
+      "target": "Content",
+      "child": {
+        "id": "Section3",
+        "type": "Box",
+        "size": {
+          "w": 380,
+          "h": 150
+        }
+      }
+    },
+    {
+      "type": "setPosition",
+      "target": "Background",
+      "newPosition": {
+        "x": 10,
+        "y": 10
+      }
+    }
+  ]
+}
