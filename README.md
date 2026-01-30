@@ -115,7 +115,7 @@ A Dart library that processes UI tree structures and state change events to dete
 #### 프로젝트 클론
 
 ```bash
-git clone https://github.com/your-org/apr-app-assignment.git
+git clone https://github.com/AndrewDongminYoo/apr-app-assignment.git
 cd apr-app-assignment
 dart pub get
 ```
