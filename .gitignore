@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/dart
-# Edit at https://www.toptal.com/developers/gitignore?templates=dart
+# Created by https://www.toptal.com/developers/gitignore/api/dart,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=dart,visualstudiocode
 
 ### Dart ###
 # See https://www.dartlang.org/guides/libraries/private-files
@@ -31,7 +31,8 @@ doc/api/
 .flutter-plugins-dependencies
 
 # Test coverage directory
-coverage/
+coverage/cmd_line
+coverage/lcov.info
 
 # Local Claude settings
 .claude/settings.local.json
@@ -40,4 +41,23 @@ coverage/
 # dotenv environment variables file
 .env
 
-# End of https://www.toptal.com/developers/gitignore/api/dart
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/dart,visualstudiocode

@@ -454,9 +454,7 @@ apr-app-assignment/
       "B": { "type": "Box", "size": { "w": 50, "h": 30 } }
     }
   },
-  "events": [
-    { "type": "setSize", "target": "A1", "size": { "w": 40, "h": 20 } }
-  ]
+  "events": [{ "type": "setSize", "target": "A1", "size": { "w": 40, "h": 20 } }]
 }
 ```
 
