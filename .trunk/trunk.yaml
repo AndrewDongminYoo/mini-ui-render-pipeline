@@ -19,6 +19,7 @@ lint:
   disabled:
     - dart
   enabled:
+    - actionlint@1.7.10
     - checkov@3.2.499
     - git-diff-check
     - markdownlint@0.47.0
