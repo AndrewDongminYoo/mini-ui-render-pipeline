@@ -71,6 +71,40 @@ void main() {
       expect(box.layoutDirty, false);
       expect(box.structureDirty, false);
     });
+
+    test('should throw when attempting to add child', () {
+      final box = BoxNode(id: 'A');
+      final child = BoxNode(id: 'B');
+      expect(
+        () => box.addChild(child),
+        throwsA(isA<UnsupportedError>()),
+      );
+    });
+
+    test('should throw when attempting to remove child', () {
+      final box = BoxNode(id: 'A');
+      final child = BoxNode(id: 'B');
+      expect(
+        () => box.removeChild(child),
+        throwsA(isA<UnsupportedError>()),
+      );
+    });
+
+    test('should throw when attempting to remove child by index', () {
+      final box = BoxNode(id: 'A');
+      expect(
+        () => box.removeChildAt(0),
+        throwsA(isA<UnsupportedError>()),
+      );
+    });
+
+    test('should throw when attempting to move child', () {
+      final box = BoxNode(id: 'A');
+      expect(
+        () => box.moveChild(0, 1),
+        throwsA(isA<UnsupportedError>()),
+      );
+    });
   });
 
   group('RowNode', () {

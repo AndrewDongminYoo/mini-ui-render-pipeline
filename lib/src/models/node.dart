@@ -190,6 +190,26 @@ class BoxNode extends Node {
     super.structureDirty,
     super.layoutDirty,
   }) : super(type: NodeType.box, children: []);
+
+  @override
+  void addChild(Node child) {
+    throw UnsupportedError('BoxNode cannot have children');
+  }
+
+  @override
+  Node removeChildAt(int index) {
+    throw UnsupportedError('BoxNode cannot have children');
+  }
+
+  @override
+  bool removeChild(Node child) {
+    throw UnsupportedError('BoxNode cannot have children');
+  }
+
+  @override
+  void moveChild(int fromIndex, int toIndex) {
+    throw UnsupportedError('BoxNode cannot have children');
+  }
 }
 
 /// A row node (horizontal layout container).
