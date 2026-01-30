@@ -33,3 +33,8 @@ scripts:
     (description): Runs all tests in the project with coverage enabled.
     (scripts):
       - dart test --coverage-path=coverage/lcov.info --concurrency=4 --test-randomize-ordering-seed=random
+
+  posttest:
+    (description): Generates a coverage report from the test coverage data.
+    (scripts):
+      - genhtml coverage/lcov.info -o coverage/ --quiet --no-function-coverage --keep-description
