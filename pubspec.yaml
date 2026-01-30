@@ -8,27 +8,19 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
-  json_annotation: ^4.10.0
+  # No runtime dependencies - pure Dart implementation
 
 dev_dependencies:
   lints: ^6.0.0
   test: ^1.25.6
-  json_serializable: ^6.8.0
-  build_runner: ^2.4.11
   import_sorter: ^4.6.0
 
 scripts:
   bootstrap:
-    (description): Initializes the project by generating necessary code, sorting imports, applying fixes, and formatting.
+    (description): Initializes the project by installing dependencies and formatting code.
     (scripts):
       - dart pub get
-      - $generate
       - $format
-
-  generate:
-    (description): Runs code generation builders and sorts imports to set up project files.
-    (scripts):
-      - dart run build_runner build --delete-conflicting-outputs
 
   format:
     (description): Applies automated fixes, sorts imports, and formats the codebase to ensure consistent code quality.
@@ -38,6 +30,6 @@ scripts:
       - dart run import_sorter:main -e
 
   test:
-    (description): Runs all tests in the Flutter project with coverage enabled.
+    (description): Runs all tests in the project with coverage enabled.
     (scripts):
       - dart test --coverage-path=coverage/lcov.info --concurrency=4 --test-randomize-ordering-seed=random
