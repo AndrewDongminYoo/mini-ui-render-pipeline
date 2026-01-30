@@ -1,7 +1,7 @@
 name: mini_ui
 description: A UI render pipeline system that processes tree structures and state change events to determine structure changes, layout recomputation, and paint order.
-version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+version: 1.1.0
+repository: https://github.com/AndrewDongminYoo/apr-app-assignment
 
 environment:
   sdk: ^3.10.7

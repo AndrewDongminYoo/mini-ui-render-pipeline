@@ -77,6 +77,58 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Cascading updates handle deep tree hierarchies with parent propagation
 - No-op detection reduces unnecessary dirty flag propagation
 
+## [1.1.0] - 2026-01-30
+
+### Added
+
+- **BoxNode Immutability**: Runtime enforcement preventing child operations on leaf nodes
+  - `addChild()`, `removeChild()`, `removeChildAt()`, `moveChild()` now throw `UnsupportedError`
+  - 4 new tests ensuring immutability constraints
+- **Configurable Layout Iterations**: `RenderPipeline.maxLayoutIterations` parameter
+  - Default value of 10 iterations
+  - Configurable for different use cases and testing
+  - Improved documentation explaining circular dependency prevention
+- **Parsing Utilities**: New `lib/src/utils/parsing_utils.dart` module
+  - `parseSize()`: Parse size from JSON map
+  - `parsePosition()`: Parse position from JSON map
+  - `nodeTypeToString()`: Convert NodeType enum to string
+
+### Changed
+
+- **Performance Optimization**: Single-pass dirty node collection
+  - `NodeTree.getDirtyNodes()` now collects both structure and layout dirty nodes in one traversal
+  - Improved from O(2n) to O(n) for large trees
+  - Backward-compatible API maintained for existing methods
+- **Exception Consistency**: Standardized JSON parsing error types
+  - `ArgumentError` → `FormatException` for all malformed input errors
+  - Clearer semantic distinction between user errors and programming errors
+  - Updated all test expectations accordingly
+
+### Removed
+
+- **Unused Dependencies**: Cleaned up `pubspec.yaml`
+  - Removed `json_annotation`, `json_serializable`, `build_runner`
+  - Removed code generation scripts
+  - Simplified bootstrap process
+
+### Refactored
+
+- **Code Duplication**: Extracted common parsing functions
+  - Eliminated duplicate implementations in `event.dart` and `json_parser.dart`
+  - Single source of truth for parsing logic
+  - Easier maintenance and bug fixes
+
+### Documentation
+
+- Updated `docs/PROGRESS.md` with comprehensive code quality improvement plan
+- Added detailed rationale and benefits for each improvement
+- Included code examples and implementation strategies
+
+### Performance
+
+- Reduced tree traversal overhead by 50% for dirty node collection
+- More efficient memory usage with single-pass algorithms
+
 ## [Unreleased]
 
 ### Planned Features
@@ -91,4 +143,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History
 
+- **1.1.0** (2026-01-30): Code quality improvements and performance optimization
 - **1.0.0** (2026-01-29): Initial release with full feature set
