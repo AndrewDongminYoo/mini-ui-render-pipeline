@@ -31,7 +31,8 @@ doc/api/
 .flutter-plugins-dependencies
 
 # Test coverage directory
-coverage/
+coverage/cmd_line
+coverage/lcov.info
 
 # Local Claude settings
 .claude/settings.local.json
@@ -39,5 +40,11 @@ coverage/
 ### Dart Patch ###
 # dotenv environment variables file
 .env
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # End of https://www.toptal.com/developers/gitignore/api/dart

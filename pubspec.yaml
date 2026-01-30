@@ -37,4 +37,4 @@ scripts:
   posttest:
     (description): Generates a coverage report from the test coverage data.
     (scripts):
-      - genhtml coverage/lcov.info -o coverage/ --quiet --no-function-coverage --keep-description
+      - genhtml coverage/lcov.info -o coverage/ --quiet --no-function-coverage --no-branch-coverage --keep-description
