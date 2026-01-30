@@ -205,7 +205,7 @@ void main() {
     test('should throw for unknown type', () {
       expect(
         () => createNode(id: 'unknown', type: 'unknown'),
-        throwsA(isA<ArgumentError>()),
+        throwsA(isA<FormatException>()),
       );
     });
 

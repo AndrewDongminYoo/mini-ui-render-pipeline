@@ -198,7 +198,7 @@ void main() {
           'events': [],
         };
 
-        expect(() => parser.parseJson(json), throwsArgumentError);
+        expect(() => parser.parseJson(json), throwsA(isA<FormatException>()));
       });
     });
 
@@ -415,7 +415,7 @@ void main() {
           ],
         };
 
-        expect(() => parser.parseJson(json), throwsArgumentError);
+        expect(() => parser.parseJson(json), throwsA(isA<FormatException>()));
       });
     });
 

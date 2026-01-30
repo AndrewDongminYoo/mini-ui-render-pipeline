@@ -291,7 +291,7 @@ void main() {
 
       expect(
         () => createEvent(json),
-        throwsA(isA<ArgumentError>()),
+        throwsA(isA<FormatException>()),
       );
     });
 

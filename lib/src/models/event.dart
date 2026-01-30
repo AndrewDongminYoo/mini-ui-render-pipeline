@@ -189,7 +189,7 @@ Event createEvent(Map<String, dynamic> json) {
       );
 
     default:
-      throw ArgumentError('Unknown event type: $type');
+      throw FormatException('Unknown event type: $type');
   }
 }
 

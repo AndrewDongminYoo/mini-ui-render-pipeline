@@ -288,6 +288,6 @@ Node createNode({
         state: state,
       );
     default:
-      throw ArgumentError('Unknown node type: $type');
+      throw FormatException('Unknown node type: $type');
   }
 }
