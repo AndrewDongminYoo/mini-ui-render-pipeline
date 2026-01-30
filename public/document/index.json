@@ -1,0 +1,2417 @@
+[
+  {
+    "name": "render_pipeline",
+    "qualifiedName": "render_pipeline",
+    "href": "render_pipeline/",
+    "kind": 9,
+    "packageRank": 0,
+    "desc": "Mini UI Render Pipeline"
+  },
+  {
+    "name": "AddChildEvent",
+    "qualifiedName": "render_pipeline.AddChildEvent",
+    "href": "render_pipeline/AddChildEvent-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Event to add a child to a node.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "AddChildEvent.new",
+    "qualifiedName": "render_pipeline.AddChildEvent.AddChildEvent.new",
+    "href": "render_pipeline/AddChildEvent/AddChildEvent.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "AddChildEvent",
+      "kind": 3,
+      "href": "render_pipeline/AddChildEvent-class.html"
+    }
+  },
+  {
+    "name": "child",
+    "qualifiedName": "render_pipeline.AddChildEvent.child",
+    "href": "render_pipeline/AddChildEvent/child.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Child node to add.",
+    "enclosedBy": {
+      "name": "AddChildEvent",
+      "kind": 3,
+      "href": "render_pipeline/AddChildEvent-class.html"
+    }
+  },
+  {
+    "name": "index",
+    "qualifiedName": "render_pipeline.AddChildEvent.index",
+    "href": "render_pipeline/AddChildEvent/index.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Optional index at which to insert the child.\nIf null, appends to the end.",
+    "enclosedBy": {
+      "name": "AddChildEvent",
+      "kind": 3,
+      "href": "render_pipeline/AddChildEvent-class.html"
+    }
+  },
+  {
+    "name": "toString",
+    "qualifiedName": "render_pipeline.AddChildEvent.toString",
+    "href": "render_pipeline/AddChildEvent/toString.html",
+    "kind": 10,
+    "overriddenDepth": 2,
+    "packageRank": 0,
+    "desc": "A string representation of this object.",
+    "enclosedBy": {
+      "name": "AddChildEvent",
+      "kind": 3,
+      "href": "render_pipeline/AddChildEvent-class.html"
+    }
+  },
+  {
+    "name": "BoxNode",
+    "qualifiedName": "render_pipeline.BoxNode",
+    "href": "render_pipeline/BoxNode-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "A box node (leaf node with fixed size).",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "BoxNode.new",
+    "qualifiedName": "render_pipeline.BoxNode.BoxNode.new",
+    "href": "render_pipeline/BoxNode/BoxNode.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "BoxNode",
+      "kind": 3,
+      "href": "render_pipeline/BoxNode-class.html"
+    }
+  },
+  {
+    "name": "addChild",
+    "qualifiedName": "render_pipeline.BoxNode.addChild",
+    "href": "render_pipeline/BoxNode/addChild.html",
+    "kind": 10,
+    "overriddenDepth": 1,
+    "packageRank": 0,
+    "desc": "Add a child node.",
+    "enclosedBy": {
+      "name": "BoxNode",
+      "kind": 3,
+      "href": "render_pipeline/BoxNode-class.html"
+    }
+  },
+  {
+    "name": "moveChild",
+    "qualifiedName": "render_pipeline.BoxNode.moveChild",
+    "href": "render_pipeline/BoxNode/moveChild.html",
+    "kind": 10,
+    "overriddenDepth": 1,
+    "packageRank": 0,
+    "desc": "Move a child from one position to another.",
+    "enclosedBy": {
+      "name": "BoxNode",
+      "kind": 3,
+      "href": "render_pipeline/BoxNode-class.html"
+    }
+  },
+  {
+    "name": "removeChild",
+    "qualifiedName": "render_pipeline.BoxNode.removeChild",
+    "href": "render_pipeline/BoxNode/removeChild.html",
+    "kind": 10,
+    "overriddenDepth": 1,
+    "packageRank": 0,
+    "desc": "Remove a child node by reference.",
+    "enclosedBy": {
+      "name": "BoxNode",
+      "kind": 3,
+      "href": "render_pipeline/BoxNode-class.html"
+    }
+  },
+  {
+    "name": "removeChildAt",
+    "qualifiedName": "render_pipeline.BoxNode.removeChildAt",
+    "href": "render_pipeline/BoxNode/removeChildAt.html",
+    "kind": 10,
+    "overriddenDepth": 1,
+    "packageRank": 0,
+    "desc": "Remove a child node by index.",
+    "enclosedBy": {
+      "name": "BoxNode",
+      "kind": 3,
+      "href": "render_pipeline/BoxNode-class.html"
+    }
+  },
+  {
+    "name": "ColumnNode",
+    "qualifiedName": "render_pipeline.ColumnNode",
+    "href": "render_pipeline/ColumnNode-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "A column node (vertical layout container).",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "ColumnNode.new",
+    "qualifiedName": "render_pipeline.ColumnNode.ColumnNode.new",
+    "href": "render_pipeline/ColumnNode/ColumnNode.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "ColumnNode",
+      "kind": 3,
+      "href": "render_pipeline/ColumnNode-class.html"
+    }
+  },
+  {
+    "name": "Engine",
+    "qualifiedName": "render_pipeline.Engine",
+    "href": "render_pipeline/Engine-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Engine for processing events and managing dirty flags.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "Engine.new",
+    "qualifiedName": "render_pipeline.Engine.Engine.new",
+    "href": "render_pipeline/Engine/Engine.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "Engine",
+      "kind": 3,
+      "href": "render_pipeline/Engine-class.html"
+    }
+  },
+  {
+    "name": "clearAllDirtyFlags",
+    "qualifiedName": "render_pipeline.Engine.clearAllDirtyFlags",
+    "href": "render_pipeline/Engine/clearAllDirtyFlags.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Clear all dirty flags in the tree.",
+    "enclosedBy": {
+      "name": "Engine",
+      "kind": 3,
+      "href": "render_pipeline/Engine-class.html"
+    }
+  },
+  {
+    "name": "getDirtyLayoutNodes",
+    "qualifiedName": "render_pipeline.Engine.getDirtyLayoutNodes",
+    "href": "render_pipeline/Engine/getDirtyLayoutNodes.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Get all dirty layout nodes.",
+    "enclosedBy": {
+      "name": "Engine",
+      "kind": 3,
+      "href": "render_pipeline/Engine-class.html"
+    }
+  },
+  {
+    "name": "getDirtyStructureNodes",
+    "qualifiedName": "render_pipeline.Engine.getDirtyStructureNodes",
+    "href": "render_pipeline/Engine/getDirtyStructureNodes.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Get all dirty structure nodes.",
+    "enclosedBy": {
+      "name": "Engine",
+      "kind": 3,
+      "href": "render_pipeline/Engine-class.html"
+    }
+  },
+  {
+    "name": "processEvent",
+    "qualifiedName": "render_pipeline.Engine.processEvent",
+    "href": "render_pipeline/Engine/processEvent.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Process an event and update dirty flags accordingly.\nReturns true if the event caused changes, false if it was a no-op.",
+    "enclosedBy": {
+      "name": "Engine",
+      "kind": 3,
+      "href": "render_pipeline/Engine-class.html"
+    }
+  },
+  {
+    "name": "tree",
+    "qualifiedName": "render_pipeline.Engine.tree",
+    "href": "render_pipeline/Engine/tree.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "The node tree being managed.",
+    "enclosedBy": {
+      "name": "Engine",
+      "kind": 3,
+      "href": "render_pipeline/Engine-class.html"
+    }
+  },
+  {
+    "name": "Event",
+    "qualifiedName": "render_pipeline.Event",
+    "href": "render_pipeline/Event-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Base class for all UI events.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "Event.new",
+    "qualifiedName": "render_pipeline.Event.Event.new",
+    "href": "render_pipeline/Event/Event.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "Event",
+      "kind": 3,
+      "href": "render_pipeline/Event-class.html"
+    }
+  },
+  {
+    "name": "targetId",
+    "qualifiedName": "render_pipeline.Event.targetId",
+    "href": "render_pipeline/Event/targetId.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Target node ID for this event.",
+    "enclosedBy": {
+      "name": "Event",
+      "kind": 3,
+      "href": "render_pipeline/Event-class.html"
+    }
+  },
+  {
+    "name": "toString",
+    "qualifiedName": "render_pipeline.Event.toString",
+    "href": "render_pipeline/Event/toString.html",
+    "kind": 10,
+    "overriddenDepth": 1,
+    "packageRank": 0,
+    "desc": "A string representation of this object.",
+    "enclosedBy": {
+      "name": "Event",
+      "kind": 3,
+      "href": "render_pipeline/Event-class.html"
+    }
+  },
+  {
+    "name": "type",
+    "qualifiedName": "render_pipeline.Event.type",
+    "href": "render_pipeline/Event/type.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Type of this event.",
+    "enclosedBy": {
+      "name": "Event",
+      "kind": 3,
+      "href": "render_pipeline/Event-class.html"
+    }
+  },
+  {
+    "name": "EventResult",
+    "qualifiedName": "render_pipeline.EventResult",
+    "href": "render_pipeline/EventResult-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Result model representing the state after processing an event.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "EventResult.fromJson",
+    "qualifiedName": "render_pipeline.EventResult.EventResult.fromJson",
+    "href": "render_pipeline/EventResult/EventResult.fromJson.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "Create from JSON.",
+    "enclosedBy": {
+      "name": "EventResult",
+      "kind": 3,
+      "href": "render_pipeline/EventResult-class.html"
+    }
+  },
+  {
+    "name": "EventResult.new",
+    "qualifiedName": "render_pipeline.EventResult.EventResult.new",
+    "href": "render_pipeline/EventResult/EventResult.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "EventResult",
+      "kind": 3,
+      "href": "render_pipeline/EventResult-class.html"
+    }
+  },
+  {
+    "name": "afterEvent",
+    "qualifiedName": "render_pipeline.EventResult.afterEvent",
+    "href": "render_pipeline/EventResult/afterEvent.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Index of the event that was processed (0-based).",
+    "enclosedBy": {
+      "name": "EventResult",
+      "kind": 3,
+      "href": "render_pipeline/EventResult-class.html"
+    }
+  },
+  {
+    "name": "hashCode",
+    "qualifiedName": "render_pipeline.EventResult.hashCode",
+    "href": "render_pipeline/EventResult/hashCode.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "The hash code for this object.",
+    "enclosedBy": {
+      "name": "EventResult",
+      "kind": 3,
+      "href": "render_pipeline/EventResult-class.html"
+    }
+  },
+  {
+    "name": "operator ==",
+    "qualifiedName": "render_pipeline.EventResult.operator ==",
+    "href": "render_pipeline/EventResult/operator_equals.html",
+    "kind": 10,
+    "overriddenDepth": 1,
+    "packageRank": 0,
+    "desc": "The equality operator.",
+    "enclosedBy": {
+      "name": "EventResult",
+      "kind": 3,
+      "href": "render_pipeline/EventResult-class.html"
+    }
+  },
+  {
+    "name": "paintOrder",
+    "qualifiedName": "render_pipeline.EventResult.paintOrder",
+    "href": "render_pipeline/EventResult/paintOrder.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Paint order (pre-order DFS traversal).",
+    "enclosedBy": {
+      "name": "EventResult",
+      "kind": 3,
+      "href": "render_pipeline/EventResult-class.html"
+    }
+  },
+  {
+    "name": "recomputeLayout",
+    "qualifiedName": "render_pipeline.EventResult.recomputeLayout",
+    "href": "render_pipeline/EventResult/recomputeLayout.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "List of node IDs that need layout recomputation.",
+    "enclosedBy": {
+      "name": "EventResult",
+      "kind": 3,
+      "href": "render_pipeline/EventResult-class.html"
+    }
+  },
+  {
+    "name": "recomputeStructure",
+    "qualifiedName": "render_pipeline.EventResult.recomputeStructure",
+    "href": "render_pipeline/EventResult/recomputeStructure.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "List of node IDs that need structure recomputation.",
+    "enclosedBy": {
+      "name": "EventResult",
+      "kind": 3,
+      "href": "render_pipeline/EventResult-class.html"
+    }
+  },
+  {
+    "name": "toJson",
+    "qualifiedName": "render_pipeline.EventResult.toJson",
+    "href": "render_pipeline/EventResult/toJson.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Convert to JSON.",
+    "enclosedBy": {
+      "name": "EventResult",
+      "kind": 3,
+      "href": "render_pipeline/EventResult-class.html"
+    }
+  },
+  {
+    "name": "toString",
+    "qualifiedName": "render_pipeline.EventResult.toString",
+    "href": "render_pipeline/EventResult/toString.html",
+    "kind": 10,
+    "overriddenDepth": 1,
+    "packageRank": 0,
+    "desc": "A string representation of this object.",
+    "enclosedBy": {
+      "name": "EventResult",
+      "kind": 3,
+      "href": "render_pipeline/EventResult-class.html"
+    }
+  },
+  {
+    "name": "EventType",
+    "qualifiedName": "render_pipeline.EventType",
+    "href": "render_pipeline/EventType.html",
+    "kind": 5,
+    "packageRank": 0,
+    "desc": "Enum for event types.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "values",
+    "qualifiedName": "render_pipeline.EventType.values",
+    "href": "render_pipeline/EventType/values-constant.html",
+    "kind": 1,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "A constant List of the values in this enum, in order of their declaration.",
+    "enclosedBy": {
+      "name": "EventType",
+      "kind": 5,
+      "href": "render_pipeline/EventType.html"
+    }
+  },
+  {
+    "name": "JsonParser",
+    "qualifiedName": "render_pipeline.JsonParser",
+    "href": "render_pipeline/JsonParser-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Parser for converting JSON input to node trees and events.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "JsonParser.new",
+    "qualifiedName": "render_pipeline.JsonParser.JsonParser.new",
+    "href": "render_pipeline/JsonParser/JsonParser.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "JsonParser",
+      "kind": 3,
+      "href": "render_pipeline/JsonParser-class.html"
+    }
+  },
+  {
+    "name": "parse",
+    "qualifiedName": "render_pipeline.JsonParser.parse",
+    "href": "render_pipeline/JsonParser/parse.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Parse a JSON string into a ParsedInput.",
+    "enclosedBy": {
+      "name": "JsonParser",
+      "kind": 3,
+      "href": "render_pipeline/JsonParser-class.html"
+    }
+  },
+  {
+    "name": "parseJson",
+    "qualifiedName": "render_pipeline.JsonParser.parseJson",
+    "href": "render_pipeline/JsonParser/parseJson.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Parse a JSON map into a ParsedInput.",
+    "enclosedBy": {
+      "name": "JsonParser",
+      "kind": 3,
+      "href": "render_pipeline/JsonParser-class.html"
+    }
+  },
+  {
+    "name": "serializeEvents",
+    "qualifiedName": "render_pipeline.JsonParser.serializeEvents",
+    "href": "render_pipeline/JsonParser/serializeEvents.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Serialize events to JSON.",
+    "enclosedBy": {
+      "name": "JsonParser",
+      "kind": 3,
+      "href": "render_pipeline/JsonParser-class.html"
+    }
+  },
+  {
+    "name": "serializeInput",
+    "qualifiedName": "render_pipeline.JsonParser.serializeInput",
+    "href": "render_pipeline/JsonParser/serializeInput.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Serialize complete input to JSON.",
+    "enclosedBy": {
+      "name": "JsonParser",
+      "kind": 3,
+      "href": "render_pipeline/JsonParser-class.html"
+    }
+  },
+  {
+    "name": "serializeTree",
+    "qualifiedName": "render_pipeline.JsonParser.serializeTree",
+    "href": "render_pipeline/JsonParser/serializeTree.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Serialize a node tree to JSON.",
+    "enclosedBy": {
+      "name": "JsonParser",
+      "kind": 3,
+      "href": "render_pipeline/JsonParser-class.html"
+    }
+  },
+  {
+    "name": "LayoutCalculator",
+    "qualifiedName": "render_pipeline.LayoutCalculator",
+    "href": "render_pipeline/LayoutCalculator-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Calculator for computing node layouts based on their type.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "LayoutCalculator.new",
+    "qualifiedName": "render_pipeline.LayoutCalculator.LayoutCalculator.new",
+    "href": "render_pipeline/LayoutCalculator/LayoutCalculator.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "LayoutCalculator",
+      "kind": 3,
+      "href": "render_pipeline/LayoutCalculator-class.html"
+    }
+  },
+  {
+    "name": "calculateLayout",
+    "qualifiedName": "render_pipeline.LayoutCalculator.calculateLayout",
+    "href": "render_pipeline/LayoutCalculator/calculateLayout.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Calculate the layout size for a node based on its type and children.\nReturns the computed size, or null if size cannot be calculated.",
+    "enclosedBy": {
+      "name": "LayoutCalculator",
+      "kind": 3,
+      "href": "render_pipeline/LayoutCalculator-class.html"
+    }
+  },
+  {
+    "name": "recalculateLayout",
+    "qualifiedName": "render_pipeline.LayoutCalculator.recalculateLayout",
+    "href": "render_pipeline/LayoutCalculator/recalculateLayout.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Recalculate layout for a node and update its size.\nReturns true if the size was updated, false otherwise.",
+    "enclosedBy": {
+      "name": "LayoutCalculator",
+      "kind": 3,
+      "href": "render_pipeline/LayoutCalculator-class.html"
+    }
+  },
+  {
+    "name": "recalculateLayouts",
+    "qualifiedName": "render_pipeline.LayoutCalculator.recalculateLayouts",
+    "href": "render_pipeline/LayoutCalculator/recalculateLayouts.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Recalculate layouts for multiple nodes in bottom-up order.\nThis ensures child sizes are calculated before parent sizes.\nReturns the list of nodes whose sizes were updated.",
+    "enclosedBy": {
+      "name": "LayoutCalculator",
+      "kind": 3,
+      "href": "render_pipeline/LayoutCalculator-class.html"
+    }
+  },
+  {
+    "name": "MoveChildEvent",
+    "qualifiedName": "render_pipeline.MoveChildEvent",
+    "href": "render_pipeline/MoveChildEvent-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Event to move a child within a node's children list.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "MoveChildEvent.new",
+    "qualifiedName": "render_pipeline.MoveChildEvent.MoveChildEvent.new",
+    "href": "render_pipeline/MoveChildEvent/MoveChildEvent.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "MoveChildEvent",
+      "kind": 3,
+      "href": "render_pipeline/MoveChildEvent-class.html"
+    }
+  },
+  {
+    "name": "fromIndex",
+    "qualifiedName": "render_pipeline.MoveChildEvent.fromIndex",
+    "href": "render_pipeline/MoveChildEvent/fromIndex.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Current index of the child.",
+    "enclosedBy": {
+      "name": "MoveChildEvent",
+      "kind": 3,
+      "href": "render_pipeline/MoveChildEvent-class.html"
+    }
+  },
+  {
+    "name": "toIndex",
+    "qualifiedName": "render_pipeline.MoveChildEvent.toIndex",
+    "href": "render_pipeline/MoveChildEvent/toIndex.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "New index for the child.",
+    "enclosedBy": {
+      "name": "MoveChildEvent",
+      "kind": 3,
+      "href": "render_pipeline/MoveChildEvent-class.html"
+    }
+  },
+  {
+    "name": "toString",
+    "qualifiedName": "render_pipeline.MoveChildEvent.toString",
+    "href": "render_pipeline/MoveChildEvent/toString.html",
+    "kind": 10,
+    "overriddenDepth": 2,
+    "packageRank": 0,
+    "desc": "A string representation of this object.",
+    "enclosedBy": {
+      "name": "MoveChildEvent",
+      "kind": 3,
+      "href": "render_pipeline/MoveChildEvent-class.html"
+    }
+  },
+  {
+    "name": "Node",
+    "qualifiedName": "render_pipeline.Node",
+    "href": "render_pipeline/Node-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Base class for all UI nodes.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "Node.new",
+    "qualifiedName": "render_pipeline.Node.Node.new",
+    "href": "render_pipeline/Node/Node.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "addChild",
+    "qualifiedName": "render_pipeline.Node.addChild",
+    "href": "render_pipeline/Node/addChild.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Add a child node.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "children",
+    "qualifiedName": "render_pipeline.Node.children",
+    "href": "render_pipeline/Node/children.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Child nodes.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "clearDirtyFlags",
+    "qualifiedName": "render_pipeline.Node.clearDirtyFlags",
+    "href": "render_pipeline/Node/clearDirtyFlags.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Clear dirty flags.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "findChild",
+    "qualifiedName": "render_pipeline.Node.findChild",
+    "href": "render_pipeline/Node/findChild.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Find a child node by ID.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "findDescendant",
+    "qualifiedName": "render_pipeline.Node.findDescendant",
+    "href": "render_pipeline/Node/findDescendant.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Recursively find a descendant node by ID.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "getChildIndex",
+    "qualifiedName": "render_pipeline.Node.getChildIndex",
+    "href": "render_pipeline/Node/getChildIndex.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Get the index of a child node.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "id",
+    "qualifiedName": "render_pipeline.Node.id",
+    "href": "render_pipeline/Node/id.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Unique identifier for this node.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "isContainer",
+    "qualifiedName": "render_pipeline.Node.isContainer",
+    "href": "render_pipeline/Node/isContainer.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Check if this node is a container (has children or can have children).",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "isLeaf",
+    "qualifiedName": "render_pipeline.Node.isLeaf",
+    "href": "render_pipeline/Node/isLeaf.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Check if this node is a leaf (no children).",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "layoutDirty",
+    "qualifiedName": "render_pipeline.Node.layoutDirty",
+    "href": "render_pipeline/Node/layoutDirty.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Whether this node's layout is dirty and needs recalculation.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "markLayoutDirty",
+    "qualifiedName": "render_pipeline.Node.markLayoutDirty",
+    "href": "render_pipeline/Node/markLayoutDirty.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Mark this node's layout as dirty.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "markStructureDirty",
+    "qualifiedName": "render_pipeline.Node.markStructureDirty",
+    "href": "render_pipeline/Node/markStructureDirty.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Mark this node's structure as dirty.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "moveChild",
+    "qualifiedName": "render_pipeline.Node.moveChild",
+    "href": "render_pipeline/Node/moveChild.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Move a child from one position to another.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "parent",
+    "qualifiedName": "render_pipeline.Node.parent",
+    "href": "render_pipeline/Node/parent.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Parent node reference.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "position",
+    "qualifiedName": "render_pipeline.Node.position",
+    "href": "render_pipeline/Node/position.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Position of this node.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "removeChild",
+    "qualifiedName": "render_pipeline.Node.removeChild",
+    "href": "render_pipeline/Node/removeChild.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Remove a child node by reference.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "removeChildAt",
+    "qualifiedName": "render_pipeline.Node.removeChildAt",
+    "href": "render_pipeline/Node/removeChildAt.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Remove a child node by index.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "size",
+    "qualifiedName": "render_pipeline.Node.size",
+    "href": "render_pipeline/Node/size.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Size of this node.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "state",
+    "qualifiedName": "render_pipeline.Node.state",
+    "href": "render_pipeline/Node/state.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Custom state for this node.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "structureDirty",
+    "qualifiedName": "render_pipeline.Node.structureDirty",
+    "href": "render_pipeline/Node/structureDirty.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Whether this node's structure is dirty and needs recalculation.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "toString",
+    "qualifiedName": "render_pipeline.Node.toString",
+    "href": "render_pipeline/Node/toString.html",
+    "kind": 10,
+    "overriddenDepth": 1,
+    "packageRank": 0,
+    "desc": "A string representation of this object.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "type",
+    "qualifiedName": "render_pipeline.Node.type",
+    "href": "render_pipeline/Node/type.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Type of this node.",
+    "enclosedBy": {
+      "name": "Node",
+      "kind": 3,
+      "href": "render_pipeline/Node-class.html"
+    }
+  },
+  {
+    "name": "NodeTree",
+    "qualifiedName": "render_pipeline.NodeTree",
+    "href": "render_pipeline/NodeTree-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Manages the tree structure of UI nodes.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "NodeTree.new",
+    "qualifiedName": "render_pipeline.NodeTree.NodeTree.new",
+    "href": "render_pipeline/NodeTree/NodeTree.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "addNode",
+    "qualifiedName": "render_pipeline.NodeTree.addNode",
+    "href": "render_pipeline/NodeTree/addNode.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Add a node to the tree (already parented).\nUseful for dynamically adding nodes.",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "clearAllDirtyFlags",
+    "qualifiedName": "render_pipeline.NodeTree.clearAllDirtyFlags",
+    "href": "render_pipeline/NodeTree/clearAllDirtyFlags.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Clear all dirty flags in the tree.",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "debugPrint",
+    "qualifiedName": "render_pipeline.NodeTree.debugPrint",
+    "href": "render_pipeline/NodeTree/debugPrint.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Utility to print tree structure (for debugging).",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "findNode",
+    "qualifiedName": "render_pipeline.NodeTree.findNode",
+    "href": "render_pipeline/NodeTree/findNode.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Find a node by ID in the tree.",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "getAllDirtyNodes",
+    "qualifiedName": "render_pipeline.NodeTree.getAllDirtyNodes",
+    "href": "render_pipeline/NodeTree/getAllDirtyNodes.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Get all dirty nodes (both structure and layout).",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "getAllNodes",
+    "qualifiedName": "render_pipeline.NodeTree.getAllNodes",
+    "href": "render_pipeline/NodeTree/getAllNodes.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Get all nodes in the tree (pre-order DFS).",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "getAncestors",
+    "qualifiedName": "render_pipeline.NodeTree.getAncestors",
+    "href": "render_pipeline/NodeTree/getAncestors.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Get all ancestors of a node (from immediate parent to root).",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "getDescendants",
+    "qualifiedName": "render_pipeline.NodeTree.getDescendants",
+    "href": "render_pipeline/NodeTree/getDescendants.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Get all descendants of a node (excluding the node itself).",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "getDirtyLayoutNodes",
+    "qualifiedName": "render_pipeline.NodeTree.getDirtyLayoutNodes",
+    "href": "render_pipeline/NodeTree/getDirtyLayoutNodes.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Get all dirty layout nodes (pre-order).",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "getDirtyNodes",
+    "qualifiedName": "render_pipeline.NodeTree.getDirtyNodes",
+    "href": "render_pipeline/NodeTree/getDirtyNodes.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Collect all dirty nodes in one pass for improved performance.",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "getDirtyStructureNodes",
+    "qualifiedName": "render_pipeline.NodeTree.getDirtyStructureNodes",
+    "href": "render_pipeline/NodeTree/getDirtyStructureNodes.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Get all dirty structure nodes (pre-order).",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "getNodeDepth",
+    "qualifiedName": "render_pipeline.NodeTree.getNodeDepth",
+    "href": "render_pipeline/NodeTree/getNodeDepth.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Get the depth of a node (root depth = 0).",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "getPaintOrder",
+    "qualifiedName": "render_pipeline.NodeTree.getPaintOrder",
+    "href": "render_pipeline/NodeTree/getPaintOrder.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Get paint order (pre-order DFS).\nReturns list of node IDs in paint order.",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "getSiblings",
+    "qualifiedName": "render_pipeline.NodeTree.getSiblings",
+    "href": "render_pipeline/NodeTree/getSiblings.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Get sibling nodes of a given node.",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "initialize",
+    "qualifiedName": "render_pipeline.NodeTree.initialize",
+    "href": "render_pipeline/NodeTree/initialize.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Initialize tree with a root node and rebuild the node map.",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "removeNode",
+    "qualifiedName": "render_pipeline.NodeTree.removeNode",
+    "href": "render_pipeline/NodeTree/removeNode.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Remove a node from the tree and its subtree.",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "root",
+    "qualifiedName": "render_pipeline.NodeTree.root",
+    "href": "render_pipeline/NodeTree/root.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Get the root node.",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "validate",
+    "qualifiedName": "render_pipeline.NodeTree.validate",
+    "href": "render_pipeline/NodeTree/validate.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Validate tree structure (parent-child consistency).\nReturns a list of error messages. Empty if valid.",
+    "enclosedBy": {
+      "name": "NodeTree",
+      "kind": 3,
+      "href": "render_pipeline/NodeTree-class.html"
+    }
+  },
+  {
+    "name": "NodeType",
+    "qualifiedName": "render_pipeline.NodeType",
+    "href": "render_pipeline/NodeType.html",
+    "kind": 5,
+    "packageRank": 0,
+    "desc": "Enum for node types.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "values",
+    "qualifiedName": "render_pipeline.NodeType.values",
+    "href": "render_pipeline/NodeType/values-constant.html",
+    "kind": 1,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "A constant List of the values in this enum, in order of their declaration.",
+    "enclosedBy": {
+      "name": "NodeType",
+      "kind": 5,
+      "href": "render_pipeline/NodeType.html"
+    }
+  },
+  {
+    "name": "ParsedInput",
+    "qualifiedName": "render_pipeline.ParsedInput",
+    "href": "render_pipeline/ParsedInput-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Parsed input containing root node and events.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "ParsedInput.new",
+    "qualifiedName": "render_pipeline.ParsedInput.ParsedInput.new",
+    "href": "render_pipeline/ParsedInput/ParsedInput.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "ParsedInput",
+      "kind": 3,
+      "href": "render_pipeline/ParsedInput-class.html"
+    }
+  },
+  {
+    "name": "events",
+    "qualifiedName": "render_pipeline.ParsedInput.events",
+    "href": "render_pipeline/ParsedInput/events.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "The list of events to process.",
+    "enclosedBy": {
+      "name": "ParsedInput",
+      "kind": 3,
+      "href": "render_pipeline/ParsedInput-class.html"
+    }
+  },
+  {
+    "name": "root",
+    "qualifiedName": "render_pipeline.ParsedInput.root",
+    "href": "render_pipeline/ParsedInput/root.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "The root node of the tree.",
+    "enclosedBy": {
+      "name": "ParsedInput",
+      "kind": 3,
+      "href": "render_pipeline/ParsedInput-class.html"
+    }
+  },
+  {
+    "name": "toString",
+    "qualifiedName": "render_pipeline.ParsedInput.toString",
+    "href": "render_pipeline/ParsedInput/toString.html",
+    "kind": 10,
+    "overriddenDepth": 1,
+    "packageRank": 0,
+    "desc": "A string representation of this object.",
+    "enclosedBy": {
+      "name": "ParsedInput",
+      "kind": 3,
+      "href": "render_pipeline/ParsedInput-class.html"
+    }
+  },
+  {
+    "name": "Position",
+    "qualifiedName": "render_pipeline.Position",
+    "href": "render_pipeline/Position-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Represents a 2D position with x and y coordinates.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "Position.new",
+    "qualifiedName": "render_pipeline.Position.Position.new",
+    "href": "render_pipeline/Position/Position.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "Position",
+      "kind": 3,
+      "href": "render_pipeline/Position-class.html"
+    }
+  },
+  {
+    "name": "copyWith",
+    "qualifiedName": "render_pipeline.Position.copyWith",
+    "href": "render_pipeline/Position/copyWith.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Creates a copy of this position with optional x/y override.",
+    "enclosedBy": {
+      "name": "Position",
+      "kind": 3,
+      "href": "render_pipeline/Position-class.html"
+    }
+  },
+  {
+    "name": "hashCode",
+    "qualifiedName": "render_pipeline.Position.hashCode",
+    "href": "render_pipeline/Position/hashCode.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "The hash code for this object.",
+    "enclosedBy": {
+      "name": "Position",
+      "kind": 3,
+      "href": "render_pipeline/Position-class.html"
+    }
+  },
+  {
+    "name": "operator ==",
+    "qualifiedName": "render_pipeline.Position.operator ==",
+    "href": "render_pipeline/Position/operator_equals.html",
+    "kind": 10,
+    "overriddenDepth": 1,
+    "packageRank": 0,
+    "desc": "The equality operator.",
+    "enclosedBy": {
+      "name": "Position",
+      "kind": 3,
+      "href": "render_pipeline/Position-class.html"
+    }
+  },
+  {
+    "name": "toString",
+    "qualifiedName": "render_pipeline.Position.toString",
+    "href": "render_pipeline/Position/toString.html",
+    "kind": 10,
+    "overriddenDepth": 1,
+    "packageRank": 0,
+    "desc": "A string representation of this object.",
+    "enclosedBy": {
+      "name": "Position",
+      "kind": 3,
+      "href": "render_pipeline/Position-class.html"
+    }
+  },
+  {
+    "name": "x",
+    "qualifiedName": "render_pipeline.Position.x",
+    "href": "render_pipeline/Position/x.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "Position",
+      "kind": 3,
+      "href": "render_pipeline/Position-class.html"
+    }
+  },
+  {
+    "name": "y",
+    "qualifiedName": "render_pipeline.Position.y",
+    "href": "render_pipeline/Position/y.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "Position",
+      "kind": 3,
+      "href": "render_pipeline/Position-class.html"
+    }
+  },
+  {
+    "name": "ProcessingSummary",
+    "qualifiedName": "render_pipeline.ProcessingSummary",
+    "href": "render_pipeline/ProcessingSummary-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Summary of node processing results.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "ProcessingSummary.new",
+    "qualifiedName": "render_pipeline.ProcessingSummary.ProcessingSummary.new",
+    "href": "render_pipeline/ProcessingSummary/ProcessingSummary.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "ProcessingSummary",
+      "kind": 3,
+      "href": "render_pipeline/ProcessingSummary-class.html"
+    }
+  },
+  {
+    "name": "layoutNodes",
+    "qualifiedName": "render_pipeline.ProcessingSummary.layoutNodes",
+    "href": "render_pipeline/ProcessingSummary/layoutNodes.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Nodes marked as layout dirty (in computation order).",
+    "enclosedBy": {
+      "name": "ProcessingSummary",
+      "kind": 3,
+      "href": "render_pipeline/ProcessingSummary-class.html"
+    }
+  },
+  {
+    "name": "structureNodes",
+    "qualifiedName": "render_pipeline.ProcessingSummary.structureNodes",
+    "href": "render_pipeline/ProcessingSummary/structureNodes.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Nodes marked as structure dirty.",
+    "enclosedBy": {
+      "name": "ProcessingSummary",
+      "kind": 3,
+      "href": "render_pipeline/ProcessingSummary-class.html"
+    }
+  },
+  {
+    "name": "toString",
+    "qualifiedName": "render_pipeline.ProcessingSummary.toString",
+    "href": "render_pipeline/ProcessingSummary/toString.html",
+    "kind": 10,
+    "overriddenDepth": 1,
+    "packageRank": 0,
+    "desc": "A string representation of this object.",
+    "enclosedBy": {
+      "name": "ProcessingSummary",
+      "kind": 3,
+      "href": "render_pipeline/ProcessingSummary-class.html"
+    }
+  },
+  {
+    "name": "updatedLayouts",
+    "qualifiedName": "render_pipeline.ProcessingSummary.updatedLayouts",
+    "href": "render_pipeline/ProcessingSummary/updatedLayouts.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Nodes whose layouts were actually recalculated.",
+    "enclosedBy": {
+      "name": "ProcessingSummary",
+      "kind": 3,
+      "href": "render_pipeline/ProcessingSummary-class.html"
+    }
+  },
+  {
+    "name": "RemoveChildEvent",
+    "qualifiedName": "render_pipeline.RemoveChildEvent",
+    "href": "render_pipeline/RemoveChildEvent-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Event to remove a child from a node.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "RemoveChildEvent.new",
+    "qualifiedName": "render_pipeline.RemoveChildEvent.RemoveChildEvent.new",
+    "href": "render_pipeline/RemoveChildEvent/RemoveChildEvent.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "RemoveChildEvent",
+      "kind": 3,
+      "href": "render_pipeline/RemoveChildEvent-class.html"
+    }
+  },
+  {
+    "name": "childId",
+    "qualifiedName": "render_pipeline.RemoveChildEvent.childId",
+    "href": "render_pipeline/RemoveChildEvent/childId.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "ID of the child to remove.",
+    "enclosedBy": {
+      "name": "RemoveChildEvent",
+      "kind": 3,
+      "href": "render_pipeline/RemoveChildEvent-class.html"
+    }
+  },
+  {
+    "name": "toString",
+    "qualifiedName": "render_pipeline.RemoveChildEvent.toString",
+    "href": "render_pipeline/RemoveChildEvent/toString.html",
+    "kind": 10,
+    "overriddenDepth": 2,
+    "packageRank": 0,
+    "desc": "A string representation of this object.",
+    "enclosedBy": {
+      "name": "RemoveChildEvent",
+      "kind": 3,
+      "href": "render_pipeline/RemoveChildEvent-class.html"
+    }
+  },
+  {
+    "name": "RenderPipeline",
+    "qualifiedName": "render_pipeline.RenderPipeline",
+    "href": "render_pipeline/RenderPipeline-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Main pipeline for processing UI events and generating render results.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "RenderPipeline.new",
+    "qualifiedName": "render_pipeline.RenderPipeline.RenderPipeline.new",
+    "href": "render_pipeline/RenderPipeline/RenderPipeline.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "Creates a render pipeline.",
+    "enclosedBy": {
+      "name": "RenderPipeline",
+      "kind": 3,
+      "href": "render_pipeline/RenderPipeline-class.html"
+    }
+  },
+  {
+    "name": "maxLayoutIterations",
+    "qualifiedName": "render_pipeline.RenderPipeline.maxLayoutIterations",
+    "href": "render_pipeline/RenderPipeline/maxLayoutIterations.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Maximum iterations for cascading layout recalculation.",
+    "enclosedBy": {
+      "name": "RenderPipeline",
+      "kind": 3,
+      "href": "render_pipeline/RenderPipeline-class.html"
+    }
+  },
+  {
+    "name": "process",
+    "qualifiedName": "render_pipeline.RenderPipeline.process",
+    "href": "render_pipeline/RenderPipeline/process.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Process input JSON and return EventResult objects.",
+    "enclosedBy": {
+      "name": "RenderPipeline",
+      "kind": 3,
+      "href": "render_pipeline/RenderPipeline-class.html"
+    }
+  },
+  {
+    "name": "processFromComponents",
+    "qualifiedName": "render_pipeline.RenderPipeline.processFromComponents",
+    "href": "render_pipeline/RenderPipeline/processFromComponents.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Process input from parsed components and return results.",
+    "enclosedBy": {
+      "name": "RenderPipeline",
+      "kind": 3,
+      "href": "render_pipeline/RenderPipeline-class.html"
+    }
+  },
+  {
+    "name": "processJson",
+    "qualifiedName": "render_pipeline.RenderPipeline.processJson",
+    "href": "render_pipeline/RenderPipeline/processJson.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Process input JSON and return output JSON results.",
+    "enclosedBy": {
+      "name": "RenderPipeline",
+      "kind": 3,
+      "href": "render_pipeline/RenderPipeline-class.html"
+    }
+  },
+  {
+    "name": "Renderer",
+    "qualifiedName": "render_pipeline.Renderer",
+    "href": "render_pipeline/Renderer-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Renderer for generating output after event processing.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "Renderer.new",
+    "qualifiedName": "render_pipeline.Renderer.Renderer.new",
+    "href": "render_pipeline/Renderer/Renderer.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "Renderer",
+      "kind": 3,
+      "href": "render_pipeline/Renderer-class.html"
+    }
+  },
+  {
+    "name": "generateResult",
+    "qualifiedName": "render_pipeline.Renderer.generateResult",
+    "href": "render_pipeline/Renderer/generateResult.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Generate result after processing an event.\nThis should be called after the event has been processed and\ndirty flags have been set.",
+    "enclosedBy": {
+      "name": "Renderer",
+      "kind": 3,
+      "href": "render_pipeline/Renderer-class.html"
+    }
+  },
+  {
+    "name": "resultsFromJson",
+    "qualifiedName": "render_pipeline.Renderer.resultsFromJson",
+    "href": "render_pipeline/Renderer/resultsFromJson.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Convert results from JSON array.",
+    "enclosedBy": {
+      "name": "Renderer",
+      "kind": 3,
+      "href": "render_pipeline/Renderer-class.html"
+    }
+  },
+  {
+    "name": "resultsToJson",
+    "qualifiedName": "render_pipeline.Renderer.resultsToJson",
+    "href": "render_pipeline/Renderer/resultsToJson.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Convert results to JSON array.",
+    "enclosedBy": {
+      "name": "Renderer",
+      "kind": 3,
+      "href": "render_pipeline/Renderer-class.html"
+    }
+  },
+  {
+    "name": "scheduler",
+    "qualifiedName": "render_pipeline.Renderer.scheduler",
+    "href": "render_pipeline/Renderer/scheduler.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "The scheduler for dirty node processing.",
+    "enclosedBy": {
+      "name": "Renderer",
+      "kind": 3,
+      "href": "render_pipeline/Renderer-class.html"
+    }
+  },
+  {
+    "name": "tree",
+    "qualifiedName": "render_pipeline.Renderer.tree",
+    "href": "render_pipeline/Renderer/tree.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "The node tree being managed.",
+    "enclosedBy": {
+      "name": "Renderer",
+      "kind": 3,
+      "href": "render_pipeline/Renderer-class.html"
+    }
+  },
+  {
+    "name": "RowNode",
+    "qualifiedName": "render_pipeline.RowNode",
+    "href": "render_pipeline/RowNode-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "A row node (horizontal layout container).",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "RowNode.new",
+    "qualifiedName": "render_pipeline.RowNode.RowNode.new",
+    "href": "render_pipeline/RowNode/RowNode.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "RowNode",
+      "kind": 3,
+      "href": "render_pipeline/RowNode-class.html"
+    }
+  },
+  {
+    "name": "Scheduler",
+    "qualifiedName": "render_pipeline.Scheduler",
+    "href": "render_pipeline/Scheduler-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Scheduler for collecting dirty nodes and determining computation order.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "Scheduler.new",
+    "qualifiedName": "render_pipeline.Scheduler.Scheduler.new",
+    "href": "render_pipeline/Scheduler/Scheduler.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "Scheduler",
+      "kind": 3,
+      "href": "render_pipeline/Scheduler-class.html"
+    }
+  },
+  {
+    "name": "calculator",
+    "qualifiedName": "render_pipeline.Scheduler.calculator",
+    "href": "render_pipeline/Scheduler/calculator.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "The layout calculator for computing node sizes.",
+    "enclosedBy": {
+      "name": "Scheduler",
+      "kind": 3,
+      "href": "render_pipeline/Scheduler-class.html"
+    }
+  },
+  {
+    "name": "collectDirtyLayoutNodes",
+    "qualifiedName": "render_pipeline.Scheduler.collectDirtyLayoutNodes",
+    "href": "render_pipeline/Scheduler/collectDirtyLayoutNodes.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Collect all dirty layout nodes in a bottom-up order.\nThis ensures children are processed before parents.",
+    "enclosedBy": {
+      "name": "Scheduler",
+      "kind": 3,
+      "href": "render_pipeline/Scheduler-class.html"
+    }
+  },
+  {
+    "name": "collectDirtyStructureNodes",
+    "qualifiedName": "render_pipeline.Scheduler.collectDirtyStructureNodes",
+    "href": "render_pipeline/Scheduler/collectDirtyStructureNodes.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Collect all dirty structure nodes in pre-order.",
+    "enclosedBy": {
+      "name": "Scheduler",
+      "kind": 3,
+      "href": "render_pipeline/Scheduler-class.html"
+    }
+  },
+  {
+    "name": "getComputationOrder",
+    "qualifiedName": "render_pipeline.Scheduler.getComputationOrder",
+    "href": "render_pipeline/Scheduler/getComputationOrder.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Get the computation order for dirty layout nodes.\nReturns nodes in bottom-up order (children before parents).",
+    "enclosedBy": {
+      "name": "Scheduler",
+      "kind": 3,
+      "href": "render_pipeline/Scheduler-class.html"
+    }
+  },
+  {
+    "name": "processAllDirty",
+    "qualifiedName": "render_pipeline.Scheduler.processAllDirty",
+    "href": "render_pipeline/Scheduler/processAllDirty.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Process all dirty nodes: structure and layout.\nReturns a summary of processed nodes.",
+    "enclosedBy": {
+      "name": "Scheduler",
+      "kind": 3,
+      "href": "render_pipeline/Scheduler-class.html"
+    }
+  },
+  {
+    "name": "recalculateDirtyLayouts",
+    "qualifiedName": "render_pipeline.Scheduler.recalculateDirtyLayouts",
+    "href": "render_pipeline/Scheduler/recalculateDirtyLayouts.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Recalculate layouts for all dirty layout nodes.\nReturns the list of node IDs whose layouts were actually updated.",
+    "enclosedBy": {
+      "name": "Scheduler",
+      "kind": 3,
+      "href": "render_pipeline/Scheduler-class.html"
+    }
+  },
+  {
+    "name": "tree",
+    "qualifiedName": "render_pipeline.Scheduler.tree",
+    "href": "render_pipeline/Scheduler/tree.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "The node tree being managed.",
+    "enclosedBy": {
+      "name": "Scheduler",
+      "kind": 3,
+      "href": "render_pipeline/Scheduler-class.html"
+    }
+  },
+  {
+    "name": "SetPositionEvent",
+    "qualifiedName": "render_pipeline.SetPositionEvent",
+    "href": "render_pipeline/SetPositionEvent-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Event to set the position of a node.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "SetPositionEvent.new",
+    "qualifiedName": "render_pipeline.SetPositionEvent.SetPositionEvent.new",
+    "href": "render_pipeline/SetPositionEvent/SetPositionEvent.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "SetPositionEvent",
+      "kind": 3,
+      "href": "render_pipeline/SetPositionEvent-class.html"
+    }
+  },
+  {
+    "name": "newPosition",
+    "qualifiedName": "render_pipeline.SetPositionEvent.newPosition",
+    "href": "render_pipeline/SetPositionEvent/newPosition.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "New position for the node.",
+    "enclosedBy": {
+      "name": "SetPositionEvent",
+      "kind": 3,
+      "href": "render_pipeline/SetPositionEvent-class.html"
+    }
+  },
+  {
+    "name": "toString",
+    "qualifiedName": "render_pipeline.SetPositionEvent.toString",
+    "href": "render_pipeline/SetPositionEvent/toString.html",
+    "kind": 10,
+    "overriddenDepth": 2,
+    "packageRank": 0,
+    "desc": "A string representation of this object.",
+    "enclosedBy": {
+      "name": "SetPositionEvent",
+      "kind": 3,
+      "href": "render_pipeline/SetPositionEvent-class.html"
+    }
+  },
+  {
+    "name": "SetSizeEvent",
+    "qualifiedName": "render_pipeline.SetSizeEvent",
+    "href": "render_pipeline/SetSizeEvent-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Event to set the size of a node.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "SetSizeEvent.new",
+    "qualifiedName": "render_pipeline.SetSizeEvent.SetSizeEvent.new",
+    "href": "render_pipeline/SetSizeEvent/SetSizeEvent.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "SetSizeEvent",
+      "kind": 3,
+      "href": "render_pipeline/SetSizeEvent-class.html"
+    }
+  },
+  {
+    "name": "newSize",
+    "qualifiedName": "render_pipeline.SetSizeEvent.newSize",
+    "href": "render_pipeline/SetSizeEvent/newSize.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "New size for the node.",
+    "enclosedBy": {
+      "name": "SetSizeEvent",
+      "kind": 3,
+      "href": "render_pipeline/SetSizeEvent-class.html"
+    }
+  },
+  {
+    "name": "toString",
+    "qualifiedName": "render_pipeline.SetSizeEvent.toString",
+    "href": "render_pipeline/SetSizeEvent/toString.html",
+    "kind": 10,
+    "overriddenDepth": 2,
+    "packageRank": 0,
+    "desc": "A string representation of this object.",
+    "enclosedBy": {
+      "name": "SetSizeEvent",
+      "kind": 3,
+      "href": "render_pipeline/SetSizeEvent-class.html"
+    }
+  },
+  {
+    "name": "SetStateEvent",
+    "qualifiedName": "render_pipeline.SetStateEvent",
+    "href": "render_pipeline/SetStateEvent-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Event to set custom state of a node.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "SetStateEvent.new",
+    "qualifiedName": "render_pipeline.SetStateEvent.SetStateEvent.new",
+    "href": "render_pipeline/SetStateEvent/SetStateEvent.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "SetStateEvent",
+      "kind": 3,
+      "href": "render_pipeline/SetStateEvent-class.html"
+    }
+  },
+  {
+    "name": "newState",
+    "qualifiedName": "render_pipeline.SetStateEvent.newState",
+    "href": "render_pipeline/SetStateEvent/newState.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "New state values to merge into the node's state.",
+    "enclosedBy": {
+      "name": "SetStateEvent",
+      "kind": 3,
+      "href": "render_pipeline/SetStateEvent-class.html"
+    }
+  },
+  {
+    "name": "toString",
+    "qualifiedName": "render_pipeline.SetStateEvent.toString",
+    "href": "render_pipeline/SetStateEvent/toString.html",
+    "kind": 10,
+    "overriddenDepth": 2,
+    "packageRank": 0,
+    "desc": "A string representation of this object.",
+    "enclosedBy": {
+      "name": "SetStateEvent",
+      "kind": 3,
+      "href": "render_pipeline/SetStateEvent-class.html"
+    }
+  },
+  {
+    "name": "Size",
+    "qualifiedName": "render_pipeline.Size",
+    "href": "render_pipeline/Size-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "Represents a 2D size with width and height.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "Size.new",
+    "qualifiedName": "render_pipeline.Size.Size.new",
+    "href": "render_pipeline/Size/Size.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "Size",
+      "kind": 3,
+      "href": "render_pipeline/Size-class.html"
+    }
+  },
+  {
+    "name": "copyWith",
+    "qualifiedName": "render_pipeline.Size.copyWith",
+    "href": "render_pipeline/Size/copyWith.html",
+    "kind": 10,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "Creates a copy of this size with optional width/height override.",
+    "enclosedBy": {
+      "name": "Size",
+      "kind": 3,
+      "href": "render_pipeline/Size-class.html"
+    }
+  },
+  {
+    "name": "hashCode",
+    "qualifiedName": "render_pipeline.Size.hashCode",
+    "href": "render_pipeline/Size/hashCode.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "The hash code for this object.",
+    "enclosedBy": {
+      "name": "Size",
+      "kind": 3,
+      "href": "render_pipeline/Size-class.html"
+    }
+  },
+  {
+    "name": "height",
+    "qualifiedName": "render_pipeline.Size.height",
+    "href": "render_pipeline/Size/height.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "Size",
+      "kind": 3,
+      "href": "render_pipeline/Size-class.html"
+    }
+  },
+  {
+    "name": "operator ==",
+    "qualifiedName": "render_pipeline.Size.operator ==",
+    "href": "render_pipeline/Size/operator_equals.html",
+    "kind": 10,
+    "overriddenDepth": 1,
+    "packageRank": 0,
+    "desc": "The equality operator.",
+    "enclosedBy": {
+      "name": "Size",
+      "kind": 3,
+      "href": "render_pipeline/Size-class.html"
+    }
+  },
+  {
+    "name": "toString",
+    "qualifiedName": "render_pipeline.Size.toString",
+    "href": "render_pipeline/Size/toString.html",
+    "kind": 10,
+    "overriddenDepth": 1,
+    "packageRank": 0,
+    "desc": "A string representation of this object.",
+    "enclosedBy": {
+      "name": "Size",
+      "kind": 3,
+      "href": "render_pipeline/Size-class.html"
+    }
+  },
+  {
+    "name": "width",
+    "qualifiedName": "render_pipeline.Size.width",
+    "href": "render_pipeline/Size/width.html",
+    "kind": 16,
+    "overriddenDepth": 0,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "Size",
+      "kind": 3,
+      "href": "render_pipeline/Size-class.html"
+    }
+  },
+  {
+    "name": "StackNode",
+    "qualifiedName": "render_pipeline.StackNode",
+    "href": "render_pipeline/StackNode-class.html",
+    "kind": 3,
+    "packageRank": 0,
+    "desc": "A stack node (overlay layout container).",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "StackNode.new",
+    "qualifiedName": "render_pipeline.StackNode.StackNode.new",
+    "href": "render_pipeline/StackNode/StackNode.html",
+    "kind": 2,
+    "packageRank": 0,
+    "desc": "",
+    "enclosedBy": {
+      "name": "StackNode",
+      "kind": 3,
+      "href": "render_pipeline/StackNode-class.html"
+    }
+  },
+  {
+    "name": "createEvent",
+    "qualifiedName": "render_pipeline.createEvent",
+    "href": "render_pipeline/createEvent.html",
+    "kind": 8,
+    "packageRank": 0,
+    "desc": "Factory function to create an event from a JSON-like map.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "createNode",
+    "qualifiedName": "render_pipeline.createNode",
+    "href": "render_pipeline/createNode.html",
+    "kind": 8,
+    "packageRank": 0,
+    "desc": "Factory function to create a node based on type string.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "eventToJson",
+    "qualifiedName": "render_pipeline.eventToJson",
+    "href": "render_pipeline/eventToJson.html",
+    "kind": 8,
+    "packageRank": 0,
+    "desc": "Convert an event to a JSON-serializable map.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "nodeTypeToString",
+    "qualifiedName": "render_pipeline.nodeTypeToString",
+    "href": "render_pipeline/nodeTypeToString.html",
+    "kind": 8,
+    "packageRank": 0,
+    "desc": "Convert NodeType enum to string representation.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "parsePosition",
+    "qualifiedName": "render_pipeline.parsePosition",
+    "href": "render_pipeline/parsePosition.html",
+    "kind": 8,
+    "packageRank": 0,
+    "desc": "Parse a position from JSON map with 'x' and 'y' keys.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  },
+  {
+    "name": "parseSize",
+    "qualifiedName": "render_pipeline.parseSize",
+    "href": "render_pipeline/parseSize.html",
+    "kind": 8,
+    "packageRank": 0,
+    "desc": "Parse a size from JSON map with 'w' and 'h' keys.",
+    "enclosedBy": {
+      "name": "render_pipeline",
+      "kind": 9,
+      "href": "render_pipeline/"
+    }
+  }
+]
