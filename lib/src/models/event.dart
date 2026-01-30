@@ -1,5 +1,6 @@
 // 🌎 Project imports:
 import 'package:mini_ui/src/models/node.dart';
+import 'package:mini_ui/src/utils/parsing_utils.dart';
 
 /// Enum for event types.
 enum EventType {
@@ -142,14 +143,14 @@ Event createEvent(Map<String, dynamic> json) {
       final sizeMap = _readMap(json, ['newSize', 'size'], 'setSize');
       return SetSizeEvent(
         targetId: targetId,
-        newSize: _parseSize(sizeMap),
+        newSize: parseSize(sizeMap),
       );
 
     case 'setposition':
       final posMap = _readMap(json, ['newPosition', 'position'], 'setPosition');
       return SetPositionEvent(
         targetId: targetId,
-        newPosition: _parsePosition(posMap),
+        newPosition: parsePosition(posMap),
       );
 
     case 'setstate':
@@ -254,19 +255,7 @@ int _readInt(
   throw FormatException('$context requires one of: ${keys.join(', ')}');
 }
 
-Size _parseSize(Map<String, dynamic> sizeMap) {
-  return Size(
-    width: (sizeMap['w'] as num).toDouble(),
-    height: (sizeMap['h'] as num).toDouble(),
-  );
-}
 
-Position _parsePosition(Map<String, dynamic> positionMap) {
-  return Position(
-    x: (positionMap['x'] as num).toDouble(),
-    y: (positionMap['y'] as num).toDouble(),
-  );
-}
 
 Node _parseNode(Map<String, dynamic> json) {
   final id = json['id'] as String?;
@@ -296,8 +285,8 @@ Node _parseNode(Map<String, dynamic> json) {
   return createNode(
     id: id,
     type: type,
-    size: sizeJson != null ? _parseSize(sizeJson) : null,
-    position: positionJson != null ? _parsePosition(positionJson) : null,
+    size: sizeJson != null ? parseSize(sizeJson) : null,
+    position: positionJson != null ? parsePosition(positionJson) : null,
     children: children,
     state: stateJson != null ? Map<String, dynamic>.from(stateJson) : null,
   );
@@ -306,7 +295,7 @@ Node _parseNode(Map<String, dynamic> json) {
 Map<String, dynamic> _serializeNode(Node node) {
   final data = <String, dynamic>{
     'id': node.id,
-    'type': _nodeTypeToString(node.type),
+    'type': nodeTypeToString(node.type),
   };
 
   if (node.size != null) {
@@ -337,15 +326,4 @@ Map<String, dynamic>? _readOptionalMap(Object? value) {
   return null;
 }
 
-String _nodeTypeToString(NodeType type) {
-  switch (type) {
-    case NodeType.box:
-      return 'Box';
-    case NodeType.row:
-      return 'Row';
-    case NodeType.column:
-      return 'Column';
-    case NodeType.stack:
-      return 'Stack';
-  }
-}
+

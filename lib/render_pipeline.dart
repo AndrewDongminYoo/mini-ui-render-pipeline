@@ -21,5 +21,8 @@ export 'src/models/result.dart';
 // Parser exports
 export 'src/parser/json_parser.dart';
 
+// Utility exports
+export 'src/utils/parsing_utils.dart';
+
 // Pipeline exports
 export 'src/render_pipeline.dart';

@@ -4,23 +4,10 @@ import 'dart:convert';
 // 🌎 Project imports:
 import 'package:mini_ui/src/models/event.dart';
 import 'package:mini_ui/src/models/node.dart';
+import 'package:mini_ui/src/utils/parsing_utils.dart';
 
 /// Parser for converting JSON input to node trees and events.
 class JsonParser {
-  /// Convert NodeType to string.
-  String _nodeTypeToString(NodeType type) {
-    switch (type) {
-      case NodeType.box:
-        return 'Box';
-      case NodeType.row:
-        return 'Row';
-      case NodeType.column:
-        return 'Column';
-      case NodeType.stack:
-        return 'Stack';
-    }
-  }
-
   /// Parse a JSON string into a ParsedInput.
   ParsedInput parse(String jsonString) {
     final json = jsonDecode(jsonString) as Map<String, dynamic>;
@@ -89,19 +76,8 @@ class JsonParser {
     final positionJson = data['position'] as Map<String, dynamic>?;
     final stateJson = data['state'] as Map<String, dynamic>?;
 
-    final size = sizeJson != null
-        ? Size(
-            width: (sizeJson['w'] as num).toDouble(),
-            height: (sizeJson['h'] as num).toDouble(),
-          )
-        : null;
-
-    final position = positionJson != null
-        ? Position(
-            x: (positionJson['x'] as num).toDouble(),
-            y: (positionJson['y'] as num).toDouble(),
-          )
-        : null;
+    final size = sizeJson != null ? parseSize(sizeJson) : null;
+    final position = positionJson != null ? parsePosition(positionJson) : null;
 
     final state = stateJson != null ? Map<String, dynamic>.from(stateJson) : null;
 
@@ -163,7 +139,7 @@ class JsonParser {
   /// Collect all nodes in the tree for serialization.
   void _collectNodes(Node node, Map<String, Map<String, dynamic>> nodes) {
     final nodeData = <String, dynamic>{
-      'type': _nodeTypeToString(node.type),
+      'type': nodeTypeToString(node.type),
     };
 
     if (node.size != null) {
