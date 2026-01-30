@@ -1,4 +1,6 @@
 # Prettier friendly markdownlint config (all formatting rules disabled)
 extends: markdownlint/style/prettier
+# Multiple headings with the same content
+MD024: false
 # Trailing punctuation in heading
 MD026: false

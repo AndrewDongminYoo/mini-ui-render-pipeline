@@ -3,6 +3,10 @@
 > **에이피알 앱 개발 직무 과제**
 > UI 트리 구조와 상태 변경 이벤트를 처리하여 증분 업데이트를 수행하는 렌더링 파이프라인
 
+[![Documentation](https://img.shields.io/badge/docs-github_pages-blue)](https://AndrewDongminYoo.github.io/apr-app-assignment/)
+[![Coverage](https://img.shields.io/badge/coverage-view_report-green)](https://AndrewDongminYoo.github.io/apr-app-assignment/coverage/html/)
+[![API Docs](https://img.shields.io/badge/api-dartdoc-orange)](https://AndrewDongminYoo.github.io/apr-app-assignment/doc/api/)
+
 A Dart library that processes UI tree structures and state change events to determine structure changes, layout recomputation, and paint order. This is an educational implementation of a UI rendering system similar to frameworks like Flutter, focusing on **dirty flag optimization** and **incremental updates**.
 
 ---
@@ -115,7 +119,7 @@ A Dart library that processes UI tree structures and state change events to dete
 #### 프로젝트 클론
 
 ```bash
-git clone https://github.com/AndrewDongminYoo/apr-app-assignment.git
+git clone https://github.com/AndrewDongminYooo/apr-app-assignment.git
 cd apr-app-assignment
 dart pub get
 ```
@@ -590,6 +594,12 @@ derry coverage
 ---
 
 ## 📚 문서
+
+### 온라인 문서
+
+- **[📊 Test Coverage Report](https://AndrewDongminYoo.github.io/apr-app-assignment/coverage/html/)**: 217개 테스트의 커버리지 리포트
+- **[📖 API Documentation](https://AndrewDongminYoo.github.io/apr-app-assignment/doc/api/)**: 전체 API 레퍼런스
+- **[🏠 Documentation Hub](https://AndrewDongminYoo.github.io/apr-app-assignment/)**: 문서 메인 페이지
 
 ### 주요 문서
 
