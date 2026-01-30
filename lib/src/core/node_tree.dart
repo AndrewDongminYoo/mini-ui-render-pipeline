@@ -94,19 +94,60 @@ class NodeTree {
     }
   }
 
+  /// Collect all dirty nodes in one pass for improved performance.
+  ///
+  /// Returns a record with (structureDirty, layoutDirty) node lists.
+  /// This is more efficient than calling getDirtyStructureNodes() and
+  /// getDirtyLayoutNodes() separately as it traverses the tree only once.
+  ///
+  /// Example:
+  /// ```dart
+  /// final (structure, layout) = tree.getDirtyNodes();
+  /// ```
+  (List<Node>, List<Node>) getDirtyNodes() {
+    final structure = <Node>[];
+    final layout = <Node>[];
+    if (_root != null) {
+      _collectDirtyNodes(_root!, structure, layout);
+    }
+    return (structure, layout);
+  }
+
+  /// Helper to collect dirty nodes in a single traversal.
+  void _collectDirtyNodes(
+    Node node,
+    List<Node> structure,
+    List<Node> layout,
+  ) {
+    if (node.structureDirty) structure.add(node);
+    if (node.layoutDirty) layout.add(node);
+    for (final child in node.children) {
+      _collectDirtyNodes(child, structure, layout);
+    }
+  }
+
   /// Get all dirty structure nodes (pre-order).
   List<Node> getDirtyStructureNodes() {
-    return getAllNodes().where((node) => node.structureDirty).toList();
+    return getDirtyNodes().$1;
   }
 
   /// Get all dirty layout nodes (pre-order).
   List<Node> getDirtyLayoutNodes() {
-    return getAllNodes().where((node) => node.layoutDirty).toList();
+    return getDirtyNodes().$2;
   }
 
   /// Get all dirty nodes (both structure and layout).
   List<Node> getAllDirtyNodes() {
-    return getAllNodes().where((node) => node.structureDirty || node.layoutDirty).toList();
+    final (structure, layout) = getDirtyNodes();
+    // Combine and deduplicate
+    final allDirty = <String, Node>{};
+    for (final node in structure) {
+      allDirty[node.id] = node;
+    }
+    for (final node in layout) {
+      allDirty[node.id] = node;
+    }
+    return allDirty.values.toList();
   }
 
   /// Clear all dirty flags in the tree.
