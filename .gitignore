@@ -33,6 +33,9 @@ doc/api/
 # Test coverage directory
 coverage/
 
+# Local Claude settings
+.claude/settings.local.json
+
 ### Dart Patch ###
 # dotenv environment variables file
 .env
