@@ -199,21 +199,21 @@ void main() {
 ### 시스템 구조
 
 ```diagram
-┌─────────────────────────────────────────────┐
-│           RenderPipeline                    │
-├─────────────────────────────────────────────┤
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  │
-│  │ Parser   │─→│ NodeTree │─→│ Engine   │  │
-│  └──────────┘  └──────────┘  └──────────┘  │
-│                     ↓              ↓        │
-│              ┌──────────┐  ┌──────────┐     │
-│              │Scheduler │─→│Calculator│     │
-│              └──────────┘  └──────────┘     │
-│                     ↓                       │
-│              ┌──────────┐                   │
-│              │ Renderer │                   │
-│              └──────────┘                   │
-└─────────────────────────────────────────────┘
+┌──────────────────────────────────────────┐
+│           RenderPipeline                 │
+├──────────────────────────────────────────┤
+│┌──────────┐  ┌──────────┐  ┌──────────┐  │
+││ Parser   │─→│ NodeTree │─→│ Engine   │  │
+│└──────────┘  └──────────┘  └──────────┘  │
+│                     ↓              ↓     │
+│              ┌──────────┐  ┌──────────┐  │
+│              │Scheduler │─→│Calculator│  │
+│              └──────────┘  └──────────┘  │
+│                     ↓                    │
+│              ┌──────────┐                │
+│              │ Renderer │                │
+│              └──────────┘                │
+└──────────────────────────────────────────┘
 ```
 
 ### 모듈 책임
@@ -460,37 +460,37 @@ Paint Order: [R, A, A1, A2, B]
 ```diagram
 lib/
 ├── src/
-│   ├── core/              # 핵심 로직
+│   ├── core/                 # 핵심 로직
 │   │   ├── node_tree.dart    # 트리 관리
 │   │   ├── engine.dart       # 이벤트 처리
 │   │   ├── scheduler.dart    # 스케줄링
 │   │   └── renderer.dart     # 결과 생성
-│   ├── models/            # 데이터 모델
+│   ├── models/               # 데이터 모델
 │   │   ├── node.dart         # Node 계층 (Box, Row, Column, Stack)
 │   │   ├── event.dart        # Event 타입들
 │   │   └── result.dart       # EventResult
-│   ├── layout/            # 레이아웃 계산
+│   ├── layout/               # 레이아웃 계산
 │   │   └── calculator.dart
-│   ├── parser/            # 입출력 변환
+│   ├── parser/               # 입출력 변환
 │   │   └── json_parser.dart
 │   └── render_pipeline.dart  # Public API
-└── render_pipeline.dart     # 라이브러리 진입점
+└── render_pipeline.dart      # 라이브러리 진입점
 
 bin/
-└── main.dart              # CLI 도구
+└── main.dart                 # CLI 도구
 
 test/
-├── models/                # 모델 단위 테스트
-├── core/                  # 핵심 로직 단위 테스트
-├── layout/                # 레이아웃 단위 테스트
-├── parser/                # 파서 단위 테스트
-├── integration/           # 통합 테스트
-└── validation/            # PLAN.md 검증 테스트
+├── models/                   # 모델 단위 테스트
+├── core/                     # 핵심 로직 단위 테스트
+├── layout/                   # 레이아웃 단위 테스트
+├── parser/                   # 파서 단위 테스트
+├── integration/              # 통합 테스트
+└── validation/               # PLAN.md 검증 테스트
 
 example/
-├── simple_example.dart    # 기본 사용 예시
-├── complex_example.dart   # 복잡한 예시
-└── input_example.json     # 샘플 입력 파일
+├── simple_example.dart       # 기본 사용 예시
+├── complex_example.dart      # 복잡한 예시
+└── input_example.json        # 샘플 입력 파일
 ```
 
 ### derry 스크립트

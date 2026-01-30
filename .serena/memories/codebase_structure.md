@@ -4,9 +4,9 @@
 
 ```diagram
 /
-├── lib/src/                          # Main library code
+├── lib/src/                         # Main library code
 │   ├── mini_ui_base.dart            # Library entry point
-│   ├── models/                       # Data structures
+│   ├── models/                      # Data structures
 │   │   ├── node.dart                # Node abstract class with dirty flags
 │   │   └── .gitkeep
 │   ├── core/                        # Engine components
@@ -18,14 +18,14 @@
 │       └── .gitkeep
 ├── test/                            # Test suite
 │   ├── models/                      # Unit tests for models
-│   │   ├── node_test.dart          # Node model tests
+│   │   ├── node_test.dart           # Node model tests
 │   │   └── .gitkeep
 │   ├── core/                        # Core component tests
-│   │   ├── node_tree_test.dart     # NodeTree tests (implemented)
+│   │   ├── node_tree_test.dart      # NodeTree tests (implemented)
 │   │   └── .gitkeep
 │   ├── integration/                 # Full pipeline tests
 │   │   └── .gitkeep
-│   ├── mini_ui_test.dart           # Main test file
+│   ├── mini_ui_test.dart            # Main test file
 │   └── models/.gitkeep
 ├── bin/                             # Executable entry points (planned)
 ├── docs/                            # Documentation
