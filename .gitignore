@@ -31,8 +31,8 @@ doc/api/
 .flutter-plugins-dependencies
 
 # Test coverage directory
-coverage/cmd_line
-coverage/lcov.info
+**/coverage/cmd_line
+**/coverage/lcov.info
 
 # Local Claude settings
 .claude/settings.local.json

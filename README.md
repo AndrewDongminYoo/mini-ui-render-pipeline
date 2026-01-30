@@ -593,10 +593,10 @@ derry coverage
 
 ### 주요 문서
 
-- **[PLAN.md](PLAN.md)**: 전체 프로젝트 계획 및 요구사항 정의
-- **[DESIGN.md](docs/DESIGN.md)**: 상세 설계 문서 (1,140줄, 13개 다이어그램)
-- **[CLAUDE.md](CLAUDE.md)**: Claude Code를 위한 프로젝트 가이드
-- **[CHANGELOG.md](CHANGELOG.md)**: 버전 히스토리
+- **`PLAN.md`**: 전체 프로젝트 계획 및 요구사항 정의
+- **`DESIGN.md`**: 상세 설계 문서 (1,140줄, 13개 다이어그램)
+- **`CLAUDE.md`**: Claude Code를 위한 프로젝트 가이드
+- **`CHANGELOG.md`**: 버전 히스토리
 
 ### DESIGN.md 주요 내용
 
