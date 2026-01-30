@@ -116,9 +116,21 @@ class Engine {
     final child = event.child;
 
     if (event.index != null) {
+      final index = event.index!;
+      if (index < 0 || index > target.children.length) {
+        throw ArgumentError(
+          'Invalid index for addChild: index=$index, children=${target.children.length}',
+        );
+      }
+      if (tree.findNode(child.id) != null) {
+        throw ArgumentError('Node with ID ${child.id} already exists');
+      }
       child.parent = target;
-      target.children.insert(event.index!, child);
+      target.children.insert(index, child);
     } else {
+      if (tree.findNode(child.id) != null) {
+        throw ArgumentError('Node with ID ${child.id} already exists');
+      }
       target.addChild(child);
     }
 

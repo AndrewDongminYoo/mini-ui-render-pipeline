@@ -43,6 +43,10 @@ class JsonParser {
     final rootId = treeJson['root'] as String;
     final nodesJson = treeJson['nodes'] as Map<String, dynamic>;
 
+    if (nodesJson.isEmpty) {
+      throw FormatException('Tree nodes must not be empty');
+    }
+
     // Create all nodes first
     final nodes = <String, Node>{};
     for (final entry in nodesJson.entries) {
@@ -59,12 +63,23 @@ class JsonParser {
 
       for (final childId in childrenIds) {
         final parent = nodes[nodeId]!;
-        final child = nodes[childId as String]!;
+        if (childId is! String) {
+          throw FormatException('Child id for node $nodeId must be a string');
+        }
+        final child = nodes[childId];
+        if (child == null) {
+          throw FormatException('Child node "$childId" referenced by "$nodeId" not found');
+        }
         parent.addChild(child);
       }
     }
 
-    return nodes[rootId]!;
+    final root = nodes[rootId];
+    if (root == null) {
+      throw FormatException('Root node "$rootId" not found in nodes map');
+    }
+
+    return root;
   }
 
   /// Create a node from JSON data.
@@ -131,65 +146,7 @@ class JsonParser {
 
   /// Parse a single event from JSON.
   Event _parseEvent(Map<String, dynamic> json) {
-    final type = json['type'] as String;
-    final targetId = json['target'] as String;
-
-    switch (type) {
-      case 'setSize':
-        final sizeJson = json['newSize'] as Map<String, dynamic>;
-        return SetSizeEvent(
-          targetId: targetId,
-          newSize: Size(
-            width: (sizeJson['w'] as num).toDouble(),
-            height: (sizeJson['h'] as num).toDouble(),
-          ),
-        );
-
-      case 'setPosition':
-        final positionJson = json['newPosition'] as Map<String, dynamic>;
-        return SetPositionEvent(
-          targetId: targetId,
-          newPosition: Position(
-            x: (positionJson['x'] as num).toDouble(),
-            y: (positionJson['y'] as num).toDouble(),
-          ),
-        );
-
-      case 'setState':
-        final newState = json['newState'] as Map<String, dynamic>;
-        return SetStateEvent(
-          targetId: targetId,
-          newState: Map<String, dynamic>.from(newState),
-        );
-
-      case 'addChild':
-        final childJson = json['child'] as Map<String, dynamic>;
-        final childId = childJson['id'] as String;
-        final child = _createNode(childId, childJson);
-        return AddChildEvent(
-          targetId: targetId,
-          child: child,
-        );
-
-      case 'removeChild':
-        final childId = json['childId'] as String;
-        return RemoveChildEvent(
-          targetId: targetId,
-          childId: childId,
-        );
-
-      case 'moveChild':
-        final fromIndex = json['fromIndex'] as int;
-        final toIndex = json['toIndex'] as int;
-        return MoveChildEvent(
-          targetId: targetId,
-          fromIndex: fromIndex,
-          toIndex: toIndex,
-        );
-
-      default:
-        throw ArgumentError('Unknown event type: $type');
-    }
+    return createEvent(json);
   }
 
   /// Serialize a node tree to JSON.
@@ -241,62 +198,7 @@ class JsonParser {
 
   /// Serialize events to JSON.
   List<Map<String, dynamic>> serializeEvents(List<Event> events) {
-    return events.map((event) => _serializeEvent(event)).toList();
-  }
-
-  /// Serialize a single event to JSON.
-  Map<String, dynamic> _serializeEvent(Event event) {
-    if (event is SetSizeEvent) {
-      return {
-        'type': 'setSize',
-        'target': event.targetId,
-        'newSize': {
-          'w': event.newSize.width,
-          'h': event.newSize.height,
-        },
-      };
-    } else if (event is SetPositionEvent) {
-      return {
-        'type': 'setPosition',
-        'target': event.targetId,
-        'newPosition': {
-          'x': event.newPosition.x,
-          'y': event.newPosition.y,
-        },
-      };
-    } else if (event is SetStateEvent) {
-      return {
-        'type': 'setState',
-        'target': event.targetId,
-        'newState': event.newState,
-      };
-    } else if (event is AddChildEvent) {
-      final childNodes = <String, Map<String, dynamic>>{};
-      _collectNodes(event.child, childNodes);
-      final childData = childNodes[event.child.id]!;
-      childData['id'] = event.child.id;
-
-      return {
-        'type': 'addChild',
-        'target': event.targetId,
-        'child': childData,
-      };
-    } else if (event is RemoveChildEvent) {
-      return {
-        'type': 'removeChild',
-        'target': event.targetId,
-        'childId': event.childId,
-      };
-    } else if (event is MoveChildEvent) {
-      return {
-        'type': 'moveChild',
-        'target': event.targetId,
-        'fromIndex': event.fromIndex,
-        'toIndex': event.toIndex,
-      };
-    } else {
-      throw ArgumentError('Unknown event type: ${event.runtimeType}');
-    }
+    return events.map(eventToJson).toList();
   }
 
   /// Serialize complete input to JSON.

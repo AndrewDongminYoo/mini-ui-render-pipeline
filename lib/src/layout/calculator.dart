@@ -3,6 +3,8 @@ import 'package:mini_ui/src/models/node.dart';
 
 /// Calculator for computing node layouts based on their type.
 class LayoutCalculator {
+  static const double _epsilon = 1e-9;
+
   /// Calculate the layout size for a node based on its type and children.
   /// Returns the computed size, or null if size cannot be calculated.
   Size? calculateLayout(Node node) {
@@ -112,12 +114,23 @@ class LayoutCalculator {
     }
 
     // Update only if size actually changed
-    if (node.size != newSize) {
+    if (!_sizeEquals(node.size, newSize)) {
       node.size = newSize;
       return true;
     }
 
     return false;
+  }
+
+  bool _sizeEquals(Size? a, Size? b) {
+    if (a == null || b == null) {
+      return a == b;
+    }
+    return _nearlyEqual(a.width, b.width) && _nearlyEqual(a.height, b.height);
+  }
+
+  bool _nearlyEqual(double a, double b) {
+    return (a - b).abs() <= _epsilon;
   }
 
   /// Recalculate layouts for multiple nodes in bottom-up order.

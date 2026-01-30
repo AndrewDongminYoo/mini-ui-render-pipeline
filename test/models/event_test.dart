@@ -181,7 +181,7 @@ void main() {
       final json = {
         'type': 'setSize',
         'target': 'A',
-        'size': {'w': 100, 'h': 50},
+        'newSize': {'w': 100, 'h': 50},
       };
 
       final event = createEvent(json);
@@ -197,7 +197,7 @@ void main() {
       final json = {
         'type': 'setPosition',
         'target': 'B',
-        'position': {'x': 10, 'y': 20},
+        'newPosition': {'x': 10, 'y': 20},
       };
 
       final event = createEvent(json);
@@ -213,7 +213,7 @@ void main() {
       final json = {
         'type': 'setState',
         'target': 'C',
-        'state': {'color': 'blue'},
+        'newState': {'color': 'blue'},
       };
 
       final event = createEvent(json);
@@ -243,8 +243,8 @@ void main() {
       final json = {
         'type': 'moveChild',
         'target': 'parent',
-        'from': 0,
-        'to': 2,
+        'fromIndex': 0,
+        'toIndex': 2,
       };
 
       final event = createEvent(json);
@@ -260,23 +260,27 @@ void main() {
       final json = {
         'type': 'SETSIZE',
         'target': 'A',
-        'size': {'w': 50, 'h': 25},
+        'newSize': {'w': 50, 'h': 25},
       };
 
       final event = createEvent(json);
       expect(event, isA<SetSizeEvent>());
     });
 
-    test('should throw for AddChildEvent (unimplemented)', () {
+    test('should create AddChildEvent from JSON', () {
       final json = {
         'type': 'addChild',
         'target': 'parent',
+        'child': {
+          'id': 'child1',
+          'type': 'Box',
+          'size': {'w': 10, 'h': 20},
+        },
       };
 
-      expect(
-        () => createEvent(json),
-        throwsA(isA<UnimplementedError>()),
-      );
+      final event = createEvent(json) as AddChildEvent;
+      expect(event.targetId, 'parent');
+      expect(event.child.id, 'child1');
     });
 
     test('should throw for unknown event type', () {
@@ -295,7 +299,7 @@ void main() {
       final json = {
         'type': 'setSize',
         'target': 'A',
-        'size': {'w': 100.5, 'h': 50},
+        'newSize': {'w': 100.5, 'h': 50},
       };
 
       final event = createEvent(json) as SetSizeEvent;
@@ -315,8 +319,8 @@ void main() {
 
       expect(json['type'], 'setSize');
       expect(json['target'], 'A');
-      expect(json['size']['w'], 100);
-      expect(json['size']['h'], 50);
+      expect(json['newSize']['w'], 100);
+      expect(json['newSize']['h'], 50);
     });
 
     test('should convert SetPositionEvent to JSON', () {
@@ -329,8 +333,8 @@ void main() {
 
       expect(json['type'], 'setPosition');
       expect(json['target'], 'B');
-      expect(json['position']['x'], 10);
-      expect(json['position']['y'], 20);
+      expect(json['newPosition']['x'], 10);
+      expect(json['newPosition']['y'], 20);
     });
 
     test('should convert SetStateEvent to JSON', () {
@@ -343,7 +347,7 @@ void main() {
 
       expect(json['type'], 'setState');
       expect(json['target'], 'C');
-      expect(json['state']['color'], 'red');
+      expect(json['newState']['color'], 'red');
     });
 
     test('should convert RemoveChildEvent to JSON', () {
@@ -370,8 +374,8 @@ void main() {
 
       expect(json['type'], 'moveChild');
       expect(json['target'], 'parent');
-      expect(json['from'], 1);
-      expect(json['to'], 3);
+      expect(json['fromIndex'], 1);
+      expect(json['toIndex'], 3);
     });
 
     test('should convert AddChildEvent with index to JSON', () {
@@ -386,7 +390,7 @@ void main() {
 
       expect(json['type'], 'addChild');
       expect(json['target'], 'parent');
-      expect(json['childId'], 'child1');
+      expect(json['child']['id'], 'child1');
       expect(json['index'], 2);
     });
 
@@ -401,7 +405,7 @@ void main() {
 
       expect(json['type'], 'addChild');
       expect(json['target'], 'parent');
-      expect(json['childId'], 'child1');
+      expect(json['child']['id'], 'child1');
       expect(json.containsKey('index'), false);
     });
   });

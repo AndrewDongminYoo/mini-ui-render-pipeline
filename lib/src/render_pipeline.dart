@@ -7,6 +7,7 @@ import 'package:mini_ui/src/core/node_tree.dart';
 import 'package:mini_ui/src/core/renderer.dart';
 import 'package:mini_ui/src/core/scheduler.dart';
 import 'package:mini_ui/src/layout/calculator.dart';
+import 'package:mini_ui/src/models/event.dart';
 import 'package:mini_ui/src/models/result.dart';
 import 'package:mini_ui/src/parser/json_parser.dart';
 
@@ -60,7 +61,7 @@ class RenderPipeline {
   /// Process input from parsed components and return results.
   List<EventResult> processFromComponents({
     required NodeTree tree,
-    required List<dynamic> events,
+    required List<Event> events,
   }) {
     final calculator = LayoutCalculator();
     final scheduler = Scheduler(tree, calculator);

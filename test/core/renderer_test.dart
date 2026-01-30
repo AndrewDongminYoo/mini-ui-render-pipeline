@@ -267,7 +267,7 @@ void main() {
     });
 
     test('should convert results from JSON', () {
-      final json = [
+      final json = <Map<String, dynamic>>[
         {
           'afterEvent': 0,
           'recomputeStructure': ['R'],

@@ -139,37 +139,36 @@ Event createEvent(Map<String, dynamic> json) {
 
   switch (type.toLowerCase()) {
     case 'setsize':
-      final sizeMap = json['size'] as Map<String, dynamic>;
+      final sizeMap = _readMap(json, ['newSize', 'size'], 'setSize');
       return SetSizeEvent(
         targetId: targetId,
-        newSize: Size(
-          width: (sizeMap['w'] as num).toDouble(),
-          height: (sizeMap['h'] as num).toDouble(),
-        ),
+        newSize: _parseSize(sizeMap),
       );
 
     case 'setposition':
-      final posMap = json['position'] as Map<String, dynamic>;
+      final posMap = _readMap(json, ['newPosition', 'position'], 'setPosition');
       return SetPositionEvent(
         targetId: targetId,
-        newPosition: Position(
-          x: (posMap['x'] as num).toDouble(),
-          y: (posMap['y'] as num).toDouble(),
-        ),
+        newPosition: _parsePosition(posMap),
       );
 
     case 'setstate':
-      final state = json['state'] as Map<String, dynamic>;
+      final state = _readMap(json, ['newState', 'state'], 'setState');
       return SetStateEvent(
         targetId: targetId,
         newState: state,
       );
 
     case 'addchild':
-      // Note: In practice, child would be constructed from JSON
-      // For now, this is a simplified version
-      throw UnimplementedError(
-        'AddChildEvent creation from JSON requires node deserialization',
+      final childJson = json['child'] as Map<String, dynamic>?;
+      if (childJson == null) {
+        throw FormatException('addChild requires a "child" object');
+      }
+      final index = json['index'] as int?;
+      return AddChildEvent(
+        targetId: targetId,
+        child: _parseNode(childJson),
+        index: index,
       );
 
     case 'removechild':
@@ -180,8 +179,8 @@ Event createEvent(Map<String, dynamic> json) {
       );
 
     case 'movechild':
-      final from = json['from'] as int;
-      final to = json['to'] as int;
+      final from = _readInt(json, ['fromIndex', 'from'], 'moveChild.fromIndex');
+      final to = _readInt(json, ['toIndex', 'to'], 'moveChild.toIndex');
       return MoveChildEvent(
         targetId: targetId,
         fromIndex: from,
@@ -201,28 +200,152 @@ Map<String, dynamic> eventToJson(Event event) {
   };
 
   if (event is SetSizeEvent) {
-    base['size'] = {
+    base['newSize'] = {
       'w': event.newSize.width,
       'h': event.newSize.height,
     };
   } else if (event is SetPositionEvent) {
-    base['position'] = {
+    base['newPosition'] = {
       'x': event.newPosition.x,
       'y': event.newPosition.y,
     };
   } else if (event is SetStateEvent) {
-    base['state'] = event.newState;
+    base['newState'] = event.newState;
   } else if (event is AddChildEvent) {
-    base['childId'] = event.child.id;
+    base['child'] = _serializeNode(event.child);
     if (event.index != null) {
       base['index'] = event.index;
     }
   } else if (event is RemoveChildEvent) {
     base['childId'] = event.childId;
   } else if (event is MoveChildEvent) {
-    base['from'] = event.fromIndex;
-    base['to'] = event.toIndex;
+    base['fromIndex'] = event.fromIndex;
+    base['toIndex'] = event.toIndex;
   }
 
   return base;
+}
+
+Map<String, dynamic> _readMap(
+  Map<String, dynamic> json,
+  List<String> keys,
+  String context,
+) {
+  for (final key in keys) {
+    final value = json[key];
+    if (value is Map) {
+      return Map<String, dynamic>.from(value);
+    }
+  }
+  throw FormatException('$context requires one of: ${keys.join(', ')}');
+}
+
+int _readInt(
+  Map<String, dynamic> json,
+  List<String> keys,
+  String context,
+) {
+  for (final key in keys) {
+    final value = json[key];
+    if (value is int) {
+      return value;
+    }
+  }
+  throw FormatException('$context requires one of: ${keys.join(', ')}');
+}
+
+Size _parseSize(Map<String, dynamic> sizeMap) {
+  return Size(
+    width: (sizeMap['w'] as num).toDouble(),
+    height: (sizeMap['h'] as num).toDouble(),
+  );
+}
+
+Position _parsePosition(Map<String, dynamic> positionMap) {
+  return Position(
+    x: (positionMap['x'] as num).toDouble(),
+    y: (positionMap['y'] as num).toDouble(),
+  );
+}
+
+Node _parseNode(Map<String, dynamic> json) {
+  final id = json['id'] as String?;
+  final type = json['type'] as String?;
+  if (id == null || type == null) {
+    throw FormatException('Node requires "id" and "type"');
+  }
+
+  final sizeJson = _readOptionalMap(json['size']);
+  final positionJson = _readOptionalMap(json['position']);
+  final stateJson = _readOptionalMap(json['state']);
+
+  List<Node>? children;
+  final rawChildren = json['children'];
+  if (rawChildren is List) {
+    final parsedChildren = <Node>[];
+    for (final entry in rawChildren) {
+      if (entry is Map<String, dynamic>) {
+        parsedChildren.add(_parseNode(entry));
+      }
+    }
+    if (parsedChildren.isNotEmpty) {
+      children = parsedChildren;
+    }
+  }
+
+  return createNode(
+    id: id,
+    type: type,
+    size: sizeJson != null ? _parseSize(sizeJson) : null,
+    position: positionJson != null ? _parsePosition(positionJson) : null,
+    children: children,
+    state: stateJson != null ? Map<String, dynamic>.from(stateJson) : null,
+  );
+}
+
+Map<String, dynamic> _serializeNode(Node node) {
+  final data = <String, dynamic>{
+    'id': node.id,
+    'type': _nodeTypeToString(node.type),
+  };
+
+  if (node.size != null) {
+    data['size'] = {
+      'w': node.size!.width,
+      'h': node.size!.height,
+    };
+  }
+
+  if (node.position != null) {
+    data['position'] = {
+      'x': node.position!.x,
+      'y': node.position!.y,
+    };
+  }
+
+  if (node.state.isNotEmpty) {
+    data['state'] = node.state;
+  }
+
+  return data;
+}
+
+Map<String, dynamic>? _readOptionalMap(Object? value) {
+  if (value is Map) {
+    return Map<String, dynamic>.from(value);
+  }
+  return null;
+}
+
+String _nodeTypeToString(NodeType type) {
+  switch (type) {
+    case NodeType.box:
+      return 'Box';
+    case NodeType.row:
+      return 'Row';
+    case NodeType.column:
+      return 'Column';
+    case NodeType.stack:
+      return 'Stack';
+  }
 }
