@@ -13,6 +13,20 @@ import 'package:mini_ui/src/parser/json_parser.dart';
 
 /// Main pipeline for processing UI events and generating render results.
 class RenderPipeline {
+  /// Maximum iterations for cascading layout recalculation.
+  ///
+  /// This prevents infinite loops in circular dependency scenarios.
+  /// The default value of 10 is sufficient for most UI trees.
+  /// Increase for extremely deep hierarchies.
+  final int maxLayoutIterations;
+
+  /// Creates a render pipeline.
+  ///
+  /// [maxLayoutIterations] defaults to 10. This is the maximum number of
+  /// iterations for cascading layout updates before stopping to prevent
+  /// infinite loops. For most UI trees, 10 iterations is more than sufficient.
+  RenderPipeline({this.maxLayoutIterations = 10});
+
   /// Process input JSON and return output JSON results.
   String processJson(String inputJson) {
     final results = process(inputJson);
@@ -90,13 +104,16 @@ class RenderPipeline {
   }
 
   /// Recalculate layouts with cascading updates.
+  ///
   /// If a node's size changes, mark its parent dirty and recalculate again.
   /// Continue until no more changes (fixed-point iteration).
+  ///
+  /// Uses [maxLayoutIterations] to prevent infinite loops in case of
+  /// circular dependencies or configuration errors.
   void _recalculateLayoutsCascading(NodeTree tree, Scheduler scheduler) {
-    const maxIterations = 10; // Prevent infinite loops
     int iteration = 0;
 
-    while (iteration < maxIterations) {
+    while (iteration < maxLayoutIterations) {
       final updated = scheduler.recalculateDirtyLayouts();
 
       if (updated.isEmpty) {
@@ -113,5 +130,9 @@ class RenderPipeline {
 
       iteration++;
     }
+
+    // Note: If iteration reaches maxLayoutIterations, there may be a
+    // circular dependency or extremely deep hierarchy. This is not an
+    // error, but the layout may not be fully resolved.
   }
 }

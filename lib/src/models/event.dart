@@ -255,8 +255,6 @@ int _readInt(
   throw FormatException('$context requires one of: ${keys.join(', ')}');
 }
 
-
-
 Node _parseNode(Map<String, dynamic> json) {
   final id = json['id'] as String?;
   final type = json['type'] as String?;
@@ -325,5 +323,3 @@ Map<String, dynamic>? _readOptionalMap(Object? value) {
   }
   return null;
 }
-
-
