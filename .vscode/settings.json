@@ -32,5 +32,6 @@
   "files.associations": {
     "apple-app-site-association": "json"
   },
-  "gitlens.ai.generateCommitMessage.customInstructions": "Draft commit messages using Conventional Commits with gitmoji, and summarize staged changes without reading entire files. Use when a user asks to write commit messages, check staged changes, or format commits as <type>: <gitmoji> <subject> with a body."
+  "gitlens.ai.generateCommitMessage.customInstructions": "Draft commit messages using Conventional Commits with gitmoji, and summarize staged changes without reading entire files. Use when a user asks to write commit messages, check staged changes, or format commits as <type>: <gitmoji> <subject> with a body.",
+  "markdownlint.configFile": ".trunk/configs/.markdownlint.yaml"
 }
