@@ -1,6 +1,5 @@
 # Mini UI Render Pipeline
 
-> **에이피알 앱 개발 직무 과제**
 > UI 트리 구조와 상태 변경 이벤트를 처리하여 증분 업데이트를 수행하는 렌더링 파이프라인
 
 A Dart library that processes UI tree structures and state change events to determine structure changes, layout recomputation, and paint order. This is an educational implementation of a UI rendering system similar to frameworks like Flutter, focusing on **dirty flag optimization** and **incremental updates**.
