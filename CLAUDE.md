@@ -21,7 +21,7 @@ This is an educational implementation of a UI rendering system similar to framew
 dart test
 
 # Run a specific test file
-dart test test/mini_ui_test.dart
+dart test test/core/engine_test.dart
 
 # Run tests with verbose output
 dart test --reporter=expanded
@@ -34,10 +34,10 @@ dart test --reporter=expanded
 dart analyze
 
 # Format code
-dart format .
+dart format lib bin test example
 
 # Check formatting without applying
-dart format --output=none --set-exit-if-changed .
+dart format --output=none --set-exit-if-changed lib bin test example
 
 # Run Trunk linters (Dart linter disabled, uses prettier/markdownlint/etc)
 trunk check
@@ -50,8 +50,8 @@ trunk fmt
 # Get dependencies
 dart pub get
 
-# Run as library (no executable defined yet)
-# CLI entrypoint will be in bin/main.dart when implemented
+# Run the implemented CLI
+dart run bin/main.dart example/input_example.json
 ```
 
 ## Architecture
@@ -64,7 +64,7 @@ The system is designed around a **Dirty Flag pattern** for incremental updates, 
 Event → Mark Target Dirty → Propagate to Related Nodes → Recompute Only Dirty Nodes → Generate Output
 ```
 
-### Key Modules (Planned in lib/src/)
+### Key Modules (in lib/src/)
 
 - **models/** - Data structures
   - `node.dart`: Node abstract class with dirty flags (structure, layout)
@@ -202,3 +202,25 @@ See PLAN.md for detailed task breakdown:
 4. **Structure Changes**: Only for tree topology changes (add/remove/move), NOT for property changes
 
 Refer to PLAN.md section 8 for detailed rationale.
+
+## Maintenance Verification
+
+Preserve the public Dart 3.10.7 SDK floor; CI checks that version.
+Refresh the lock with that minimum SDK and verify the same frozen lock, analysis and tests on installed Dart 3.13.7.
+The latest test/analyzer toolchain requires a newer SDK, so use the latest minimum-compatible solver result instead of raising the public SDK floor.
+There is no runtime dependency or build_runner code generation.
+The separate offline scanner adapter uses `python3 -B .trunk/configs/tests/test_trufflehog_to_sarif.py` in CI and keeps provider verification disabled.
+Use `trunk check --all --no-fix` for the approved full maintenance scan and explicit formatter paths.
+
+## Offline scanner boundary
+
+Run `python3 -B .trunk/configs/tests/test_trufflehog_to_sarif.py` to exercise the 17 filesystem JSONL diagnostic reader cases.
+Trunk 1.25.0 consumes native paths in the SARIF path field; URI encoding drops findings for reserved filenames.
+This adapter preserves native paths for Trunk and does not promise portable SARIF URI conformance.
+Columns use Unicode code points, encoded findings retain file-level diagnostics, and scanner input errors fail the gate with `--fail-on-scan-errors`.
+No candidate credential is verified with its provider.
+Application source and document fixtures remain unchanged.
+
+Source-location analysis reads at most 1 MiB plus one sentinel byte per file and caches at most eight files.
+Oversized sources retain file-level findings without a region.
+These limits bound source context; they do not bound all result memory or guarantee that filesystem I/O cannot block.

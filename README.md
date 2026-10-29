@@ -40,7 +40,7 @@ A Dart library that processes UI tree structures and state change events to dete
 - ✅ **증분 업데이트**: 변경된 부분만 재계산 (전체 트리 재계산 회피)
 - ✅ **결정성**: 동일 입력 → 동일 출력 보장
 - ✅ **명확성**: 설계 결정의 근거를 문서화
-- ✅ **테스트 가능성**: 217개 테스트로 검증된 구현
+- ✅ **테스트 가능성**: 단위·통합·CLI 테스트로 검증하는 구현
 
 ---
 
@@ -60,7 +60,7 @@ A Dart library that processes UI tree structures and state change events to dete
 - 🔄 **Cascading Updates**: 자식 변경이 부모에 자동 전파
 - 📊 **JSON I/O**: 표준 JSON 형식 입출력
 - 🖥️ **CLI 도구**: 커맨드라인 인터페이스 제공
-- ✅ **217개 테스트**: 완전한 테스트 커버리지
+- ✅ **회귀 테스트**: 모델·레이아웃·이벤트 처리와 CLI 동작을 검사합니다.
 
 ---
 
@@ -114,15 +114,15 @@ A Dart library that processes UI tree structures and state change events to dete
 #### 프로젝트 클론
 
 ```bash
-git clone https://github.com/AndrewDongminYoo/apr-app-assignment.git
-cd apr-app-assignment
+git clone https://github.com/AndrewDongminYoo/mini-ui-render-pipeline.git
+cd mini-ui-render-pipeline
 dart pub get
 ```
 
 #### derry 스크립트 사용 (권장)
 
 ```bash
-# Bootstrap (의존성 설치 + 코드 생성)
+# Bootstrap (의존성 설치와 포맷팅)
 derry bootstrap
 
 # 테스트 실행
@@ -491,20 +491,14 @@ example/
 ### derry 스크립트
 
 ```bash
-# Bootstrap: 의존성 설치 + 코드 생성
+# Bootstrap: 의존성 설치와 포맷팅
 derry bootstrap
 
-# 테스트 실행
+# 테스트와 LCOV 커버리지 생성
 derry test
 
 # 코드 포맷팅
 derry format
-
-# 코드 생성 (build_runner)
-derry generate
-
-# 커버리지 확인
-derry coverage
 ```
 
 ### 개발 워크플로우
@@ -547,20 +541,8 @@ derry coverage
 
 ### 테스트 현황
 
-| 모듈             | 테스트 수 | 상태            |
-| ---------------- | --------- | --------------- |
-| Node Model       | 25        | ✅ PASSING      |
-| NodeTree         | 19        | ✅ PASSING      |
-| Event Model      | 34        | ✅ PASSING      |
-| Engine           | 28        | ✅ PASSING      |
-| LayoutCalculator | 22        | ✅ PASSING      |
-| Scheduler        | 17        | ✅ PASSING      |
-| Renderer         | 15        | ✅ PASSING      |
-| JSON Parser      | 31        | ✅ PASSING      |
-| RenderPipeline   | 13        | ✅ PASSING      |
-| CLI              | 11        | ✅ PASSING      |
-| PLAN Validation  | 2         | ✅ PASSING      |
-| **TOTAL**        | **217**   | **ALL PASSING** |
+테스트 수와 실행 결과는 `dart test` 출력에서 확인합니다.
+단위·통합·CLI·계획 검증 테스트는 `test/` 아래에 있습니다.
 
 ### 테스트 실행
 
@@ -574,8 +556,8 @@ dart test test/core/engine_test.dart
 # 상세 출력
 dart test --reporter=expanded
 
-# 커버리지
-derry coverage
+# LCOV 커버리지 생성
+dart test --coverage-path=coverage/lcov.info
 ```
 
 ### 주요 테스트 케이스
@@ -593,7 +575,7 @@ derry coverage
 ### 주요 문서
 
 - **[PLAN.md](PLAN.md)**: 전체 프로젝트 계획 및 요구사항 정의
-- **[DESIGN.md](docs/DESIGN.md)**: 상세 설계 문서 (1,140줄, 13개 다이어그램)
+- **[DESIGN.md](docs/DESIGN.md)**: 상세 설계 문서
 - **[CLAUDE.md](CLAUDE.md)**: Claude Code를 위한 프로젝트 가이드
 - **[CHANGELOG.md](CHANGELOG.md)**: 버전 히스토리
 
