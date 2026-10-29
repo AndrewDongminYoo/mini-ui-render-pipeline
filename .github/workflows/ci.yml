@@ -20,10 +20,13 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Test offline secret reader
+        run: python3 -B .trunk/configs/tests/test_trufflehog_to_sarif.py
+
       - name: Set up Dart
         uses: dart-lang/setup-dart@6afc89df92d6eb3834022f73cd65adc8cdfcb92d # v1.8.1
         with:
-          sdk: "3.10.7"
+          sdk: 3.10.7
 
       - name: Install dependencies
         run: dart pub get
