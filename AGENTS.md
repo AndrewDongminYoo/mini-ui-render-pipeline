@@ -12,7 +12,7 @@
 ## Build, Test, and Development Commands
 
 - `dart pub get` installs dependencies.
-- `dart run build_runner build --delete-conflicting-outputs` runs code generation (JSON serialization).
+- `dart run bin/main.dart --help` lists the implemented CLI arguments.
 - `dart test` runs all tests; `dart test test/core/engine_test.dart` runs a single file.
 - `dart test --reporter=expanded` enables verbose output.
 - `dart analyze` runs static analysis (see `analysis_options.yaml`).
