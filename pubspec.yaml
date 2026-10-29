@@ -1,7 +1,7 @@
 name: mini_ui
 description: A UI render pipeline system that processes tree structures and state change events to determine structure changes, layout recomputation, and paint order.
 version: 1.1.0
-repository: https://github.com/AndrewDongminYoo/apr-app-assignment
+repository: https://github.com/AndrewDongminYoo/mini-ui-render-pipeline
 
 environment:
   sdk: ^3.10.7
@@ -11,8 +11,8 @@ dependencies:
   # No runtime dependencies - pure Dart implementation
 
 dev_dependencies:
-  lints: ^6.0.0
-  test: ^1.25.6
+  lints: ^6.1.0
+  test: ^1.31.1
   import_sorter: ^4.6.0
 
 scripts:
