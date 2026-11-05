@@ -17,7 +17,7 @@
 
 ## Constraints and Oracle Waiver
 
-The operator explicitly approved continuing after the project lookup was unavailable.
+Continuing after the project lookup was unavailable was explicitly approved.
 No indexed project identity or usable precedent was established; this is not a no-precedent claim.
 Use the current Dart source, tests and CI as evidence.
 Preserve the public Dart 3.10.7 minimum and verify that runtime separately from the installed Dart 3.13.7 SDK.
